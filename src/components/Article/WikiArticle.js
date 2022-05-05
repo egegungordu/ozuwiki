@@ -4,16 +4,17 @@ import remarkGfm from 'remark-gfm'
 import React from 'react';
 import TableOfContents from './TableOfContents';
 import { useWindowScroll } from 'react-use';
-const bruh = false
+
 export default function WikiArticle(props) {
   const { imageUrl, imageDescription, details, article } = props.content
-  const y = props.y
+  // scrolling is laggy in dev build
+  const { y } = useWindowScroll()
 
   return (
     <>
     <Container fluid="xxl" style={{paddingTop: '2.5rem'}}>
       <Row>
-        <Col className="toc-column d-none d-lg-block col-3 p-0">
+        <Col xs={3} className="toc-column d-none d-lg-block p-0">
           <h4 className="ozuwikiheader text-center my-5">Ozu Wiki</h4>
           <div className="sticky-top ps-3" style={{top: 48}}>
               <h6><b>Contents</b></h6>
@@ -22,7 +23,7 @@ export default function WikiArticle(props) {
               </Container>
           </div>
         </Col>
-        <Col style={{zIndex: 1}} className="article-column shadow-sm p-5 col-12 col-sm-8 col-lg-6 order-2 order-sm-1">
+        <Col xs={12} sm={8} lg={6} style={{zIndex: 1}} className="article-column shadow-sm p-5 order-2 order-sm-1">
           <ReactMarkdown children={article} remarkPlugins={[remarkGfm]}
             components = {{
               h1: HeadingRenderer,
@@ -34,7 +35,7 @@ export default function WikiArticle(props) {
             }}
           />
         </Col>
-        <Col className="details-column p-0 col-12 col-sm-4 col-lg-3 order-1 order-sm-2">
+        <Col xs={12} sm={4} lg={3} className="details-column p-0 order-1 order-sm-2">
           <img src={imageUrl} alt="placeholder" className="img-fluid mx-auto d-block" />
           <ListGroup variant="flush">
             <ListGroup.Item>
@@ -47,10 +48,10 @@ export default function WikiArticle(props) {
                 {details.map((detail, index) => {
                   return (
                     <Row key={index} className="py-2">
-                      <Col className="col-4">
+                      <Col xs={4}>
                         <h6 className="m-0"><b>{detail.title}</b></h6>
                       </Col>
-                      <Col className="col-8">
+                      <Col xs={8}>
                         <p className="m-0">{detail.description}</p>
                       </Col>
                     </Row>
