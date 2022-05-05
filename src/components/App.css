@@ -1,0 +1,136 @@
+html {
+    --background-primary: white;
+    --background-secondary: #f7f8fa;
+    --background-tertiary: #ecedf2;
+    --blue: #1055bb;
+    --gray: #9aa0a7;
+    --light-gray: #cacaca;
+}
+
+body {
+    background: white;
+}
+
+a {
+    color: var(--blue)
+}
+
+.anchor::before {
+  content: '';
+  display: block;
+  height: 40px;
+  margin-top: -40px;
+  visibility: hidden;
+}
+
+.active {
+    background-color: var(--background-secondary);
+}
+
+.navbar {
+    background-color: var(--background-tertiary) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--blue);
+}
+
+.search {
+    background-color: var(--background-tertiary);
+}
+
+.ozuwikiheader {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.toc-container-article {
+    overflow-x: hidden;
+}
+
+.toc-container-article.scrollable{
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.offcanvas-toc-container {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.toc-column {
+    background-color: var(--background-secondary);
+}
+
+.article-column {
+    background-color: var(--background-primary);
+}
+
+.article-column h1, .article-column h2, .article-column h3, .article-column h4, .article-column h5, .article-column h6 {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--background-primary);
+}
+
+.details-column {
+    background-color: var(--background-secondary);
+}
+
+.details-column .list-group-item {
+    background-color: var(--background-secondary);
+}
+
+.account-dropdown {
+    background-color: var(--background-secondary);
+}
+
+.account-dropdown .nav-link {
+    padding: 0.5rem;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.toc-counter {
+    color: var(--gray)
+}
+
+.toc-content {
+    text-decoration: none;
+}
+
+.toc-content:hover {
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--background-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gray);
+}
+
+.search-offcanvas {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 380px;
+    overflow-y: auto;
+    padding-bottom: 40vh;
+    background-color: var(--background-secondary);
+}
+
+#nekonadegoe::after {
+    display: none;
+}
+
+#nekonadegoe {
+    padding: 0;
+}
