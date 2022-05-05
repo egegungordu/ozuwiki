@@ -1,6 +1,6 @@
 
 export default function TableOfContents(props) {
-  const contents = calculateTableOfContents(props.article)
+  const contents = calculateTableOfContents(props.markdown)
   const compact = props.compact || 6
   
   return (
@@ -33,7 +33,8 @@ function Content(props) {
 }
 
 function calculateTableOfContents(article) {
-  const regex = /[^#](#{1,6}) (.*)/g
+  // TODO: this matches unvalid headers that are longer than 6
+  const regex = /(#{1,6}) (.*)/g
   const contents = []
   const counters = new Array(6).fill(0)
   let match
@@ -52,5 +53,6 @@ function calculateTableOfContents(article) {
       id: id
     })
   }
+  console.log(contents)
   return contents
 }

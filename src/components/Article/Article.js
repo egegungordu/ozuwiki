@@ -8,124 +8,36 @@ import { useWindowSize } from 'react-use';
 import { BsSearch } from 'react-icons/bs';
 
 export default function Article() {
-
-  const markdown = `
-  # Title
-  ---
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-  ## Subtitle
-  ---
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-  | Header 1 | Header 2 |
-  | -------- | -------- |
-  | Cell 1   | Cell 2   |
-  | Cell 3   | Cell 4   |
-  | Cell 5   | Cell 6   |
-  | Cell 7   | Cell 8   |
-    
-  ## waku waku
-
-  # GFM
-
-  ## Autolink literals
-
-  www.example.com, https://example.com, and contact@example.com.
-
-  ### Escaping
-
-  \`This is a code block\`
+  const [article, setArticle] = React.useState(
+    {
+      imageUrl: 'https://picsum.photos/300',
+      imageDescription: 'Placeholder image',
+      markdown: '',
+      details: [
+        {
+          title: 'Title',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          title: 'Subtitle',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }
+      ]
+    }
+  );
   
-  # All headers
-
-  ## Header 2
-  ### Header 3
-  #### Header 4
-  ##### Header 5
-  ###### Header 6
-  ###### Header 6
-  ###### Header 6
-  ###### Header 6
-  
-  ## Footnote
-  
-  # Very long long long long long long long header
-
-  A note[^1]
-
-  [^1]: Big note.
-
-  ## Strikethrough
-
-  ~one~ or ~~two~~ tildes.
-
-  ## Table
-
-  | a | b  |  c |  d  |
-  | - | :- | -: | :-: |
-
-  ## Tasklist
-
-  * [ ] to do
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-  * [x] done
-    
-  ## Header 2
-  ### Header 3
-  #### Header 4
-  #### Header 4
-  #### Header 4
-  #### Header 4
-  #### Header 4
-  #### Header 4
-  #### Header 4
-
-  ## Bottom
-  `
-
-  const articleContent = {
-    imageUrl: "https://picsum.photos/350", 
-    imageDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum eget nunc tincidunt, euismod euismod.",
-    article: markdown,
-    details: [
-      {
-        title: "Title 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum eget nunc tincidunt, euismod euismod."
-      },
-      {
-        title: "Title 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ipsum eget nunc tincidunt, euismod euismod."
-      } 
-    ]
-  }
+  React.useEffect(() => {
+    fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt').then(async (response) => {
+      const articleCopy = { ...article };
+      articleCopy.markdown = await response.text();
+      setArticle(articleCopy);
+    })
+  }, []);
 
   const [showOffcanvas, setShowOffcanvas] = React.useState(false);
   const [target, setTarget] = React.useState(null);
   const size = useWindowSize();
-
+  
   React.useEffect(() => {
     if (size.width >= 992) {
       setShowOffcanvas(false)
@@ -174,7 +86,7 @@ export default function Article() {
           </button>
         }
       />
-      <WikiArticle content={articleContent} />
+      <WikiArticle article={article}/>
       <WikiOffcanvas
         show={showOffcanvas}
         onHide={handleOffcanvasClose}
@@ -185,7 +97,7 @@ export default function Article() {
             <div className="sticky-top ps-4" style={{top: 48}}>
                 <h6><b>Contents</b></h6>
                 <Container fluid className={`px-0 toc-container-article`}>
-                    <TableOfContents article={articleContent.article} compact={3} onLinkClick={handleOffcanvasLinkClick} />
+                    <TableOfContents markdown={article.markdown} compact={3} onLinkClick={handleOffcanvasLinkClick} />
                 </Container>
             </div>
           </Col>

@@ -6,7 +6,20 @@ import TableOfContents from './TableOfContents';
 import { useWindowScroll } from 'react-use';
 
 export default function WikiArticle(props) {
-  const { imageUrl, imageDescription, details, article } = props.content
+  const { 
+    imageUrl = 'https://via.placeholder.com/350', 
+    imageDescription = 'Image Description', 
+    details = [
+      {
+        title: 'Title 1',
+        description: 'Description 1'
+      },
+      {
+        title: 'Title 2',
+        description: 'Description 2'
+      }
+    ], 
+    markdown} = props.article
   // scrolling is laggy in dev build
   const { y } = useWindowScroll()
 
@@ -19,12 +32,12 @@ export default function WikiArticle(props) {
           <div className="sticky-top ps-3" style={{top: 48}}>
               <h6><b>Contents</b></h6>
               <Container fluid className={`px-0 toc-container-article${y > 120 ? ' scrollable' : ''}`}>
-                  <TableOfContents article={article} compact={3}/>
+                  <TableOfContents markdown={markdown} compact={3}/>
               </Container>
           </div>
         </Col>
         <Col xs={12} sm={8} lg={6} style={{zIndex: 1}} className="article-column shadow-sm p-5 order-2 order-sm-1">
-          <ReactMarkdown children={article} remarkPlugins={[remarkGfm]}
+          <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]}
             components = {{
               h1: HeadingRenderer,
               h2: HeadingRenderer,
