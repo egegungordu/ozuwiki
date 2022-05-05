@@ -8,30 +8,36 @@ import { useWindowSize } from 'react-use';
 import { BsSearch } from 'react-icons/bs';
 
 export default function Article() {
-  const [article, setArticle] = React.useState(
-    {
-      imageUrl: 'https://picsum.photos/300',
-      imageDescription: 'Placeholder image',
-      markdown: '',
-      details: [
-        {
-          title: 'Title',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        },
-        {
-          title: 'Subtitle',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        }
-      ]
-    }
-  );
+  const [article, setArticle] = React.useState(null);
   
   React.useEffect(() => {
-    fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt').then(async (response) => {
-      const articleCopy = { ...article };
-      articleCopy.markdown = await response.text();
-      setArticle(articleCopy);
-    })
+    const fetchMarkdown = async () => {
+      const response = await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
+      return response.text()
+    }
+    
+    const asyncSet = async () => {
+      const markdown = await fetchMarkdown()
+      const markdown2 = await fetchMarkdown()
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      setArticle({
+        imageUrl: 'https://picsum.photos/350',
+        imageDescription: 'Placeholder image',
+        markdown: markdown + '\n\n' + markdown2,
+        details: [
+          {
+            title: 'Title 1',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          },
+          {
+            title: 'Title 2',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          }
+        ]
+      })
+    }
+    
+    asyncSet()
   }, []);
 
   const [showOffcanvas, setShowOffcanvas] = React.useState(false);
@@ -97,7 +103,7 @@ export default function Article() {
             <div className="sticky-top ps-4" style={{top: 48}}>
                 <h6><b>Contents</b></h6>
                 <Container fluid className={`px-0 toc-container-article`}>
-                    <TableOfContents markdown={article.markdown} compact={3} onLinkClick={handleOffcanvasLinkClick} />
+                    <TableOfContents markdown={article && article.markdown} compact={3} onLinkClick={handleOffcanvasLinkClick} />
                 </Container>
             </div>
           </Col>

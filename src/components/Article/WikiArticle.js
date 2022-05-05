@@ -8,18 +8,10 @@ import { useWindowScroll } from 'react-use';
 export default function WikiArticle(props) {
   const { 
     imageUrl = 'https://via.placeholder.com/350', 
-    imageDescription = 'Image Description', 
-    details = [
-      {
-        title: 'Title 1',
-        description: 'Description 1'
-      },
-      {
-        title: 'Title 2',
-        description: 'Description 2'
-      }
-    ], 
-    markdown} = props.article
+    imageDescription, 
+    details = [],
+    markdown
+  } = props.article || {}
   // scrolling is laggy in dev build
   const { y } = useWindowScroll()
 
