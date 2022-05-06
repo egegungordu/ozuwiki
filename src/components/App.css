@@ -12,6 +12,10 @@ html[offcanvas="true"] {
     overflow-y: clip;
 }
 
+html, body {
+    overflow-x:hidden;
+}
+
 .offcanvas-padding {
     padding-right: 6px;
 }
