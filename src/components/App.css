@@ -12,10 +12,6 @@ html[offcanvas="true"] {
     overflow-y: clip;
 }
 
-html, body {
-    overflow-x:hidden;
-}
-
 .offcanvas-padding {
     padding-right: 6px;
 }
@@ -78,6 +74,7 @@ a {
 
 .article-column {
     background-color: var(--background-primary);
+    overflow-x: hidden;
 }
 
 .article-column h1, .article-column h2, .article-column h3, .article-column h4, .article-column h5, .article-column h6 {
