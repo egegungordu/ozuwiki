@@ -5,10 +5,21 @@ html {
     --blue: #1055bb;
     --gray: #9aa0a7;
     --light-gray: #cacaca;
+    overflow-y: scroll;
 }
 
-body {
-    background: white;
+html[offcanvas="true"] {
+    overflow-y: clip;
+}
+
+.offcanvas-padding {
+    padding-right: 6px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .offcanvas-padding {
+        padding-right: 0;
+    }
 }
 
 a {
@@ -67,10 +78,15 @@ a {
 
 .article-column h1, .article-column h2, .article-column h3, .article-column h4, .article-column h5, .article-column h6 {
     font-family: 'Times New Roman', Times, serif;
+}
+
+#article-title {
+    font-family: 'Times New Roman', Times, serif;
     background-color: var(--background-primary);
 }
 
 .details-column {
+    font-size: 0.9rem;
     background-color: var(--background-secondary);
 }
 
@@ -87,6 +103,7 @@ a {
 }
 
 .navbar-nav .dropdown-menu {
+    padding: 0;
     position: absolute;
 }
 
@@ -135,3 +152,35 @@ a {
 #nekonadegoe {
     padding: 0;
 }
+
+.navbar-logo {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    background-color: transparent;
+    color: var(--bs-gray-600);
+    height: 40px;
+}
+
+.navbar-logo:hover:not([disabled]) {
+    background-color: var(--background-secondary);
+}
+
+.nav-link:hover:not([active]) {
+    background-color: var(--background-secondary);
+}
+
+.nav-link {
+    transition: none;
+}
+
+.offcanvas-header .btn-close {
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.offcanvas-header .btn-close:focus {
+    outline: none;
+    box-shadow: none;
+}
+

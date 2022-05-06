@@ -1,20 +1,28 @@
+import { SkeletonTable } from '../../common/Skeletons'
 
 export default function TableOfContents(props) {
   const contents = calculateTableOfContents(props.markdown)
   const compact = props.compact || 6
-  
+  const contentsComponents = contents.map((content, index) => {
+    return <Content key={index} content={content} compact={compact} onClick={props.onLinkClick} />
+  })
+ 
   return (
     <div className="d-flex flex-column">
-      {contents.map((content, index) => {
-        return <Content key={index} content={content} compact={compact} onLinkClick={props.onLinkClick}/>
-      }
-      )}
+      {props.markdown ? contentsComponents : <SkeletonTable />}
     </div>
   )
 }
 
 function Content(props) {
   const { index, level, title, id } = props.content
+  
+  const handleClick = (e) => {
+    e.preventDefault()
+    const top = document.getElementById(id).offsetTop
+    window.scrollTo(0, top)
+    props.onClick && props.onClick(id)
+  }
 
   return (
     <div className="d-flex flex-row">
@@ -26,7 +34,7 @@ function Content(props) {
       })}
       <div className={`d-flex flex-${level > props.compact - 1 ? 'column' : 'row'}`}>
         <span className="toc-counter">{index}</span>
-        <a className="ms-2 toc-content" href={'#' + id} onClick={props.onLinkClick}>{title}</a>
+        <a className="ms-2 toc-content" href={'#' + id} onClick={handleClick}>{title}</a>
       </div>
     </div>
   )
@@ -53,6 +61,5 @@ function calculateTableOfContents(article) {
       id: id
     })
   }
-  console.log(contents)
   return contents
 }
