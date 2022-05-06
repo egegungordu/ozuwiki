@@ -103,7 +103,7 @@ export default function WikiNavbar(props) {
           {showHome && <button className="pb-2 me-0 navbar-logo rounded-0 border-0 shadow-none" onClick={handleHome}>
             <BsHouseDoorFill />
           </button>}
-          <Nav.Item>
+          <Nav.Item className="me-auto">
             <Nav.Link className="p-2" active disabled href="#">{title}</Nav.Link>
           </Nav.Item>
           {navigation.map((nav, index) => {
