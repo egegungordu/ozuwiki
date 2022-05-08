@@ -1,18 +1,10 @@
-import WikiNavbar from '../../common/WikiNavbar';
+import WikiPage from '../../common/WikiPage/WikiPage';
 
 export default function Login() {
   
   return (
-    <>
-      <WikiNavbar 
-        title="Home"
-        showSearch={true}
-        showAccount={true}
-        offcanvasEnabled={true}
-        offcanvasContent={
-          <p>asdasd</p>
-        }
-      />
-    </>
+    <WikiPage>
+      
+    </WikiPage>
   )
 }

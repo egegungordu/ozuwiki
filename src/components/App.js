@@ -14,6 +14,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/search:query" element={<Search />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/search" element={<Search />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/article/:articleName" element={<Article />} />
       <Route path="/article/:articleName/contribute" element={<Contribute />} />
