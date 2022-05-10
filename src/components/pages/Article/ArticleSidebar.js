@@ -1,13 +1,15 @@
 import { Container } from 'react-bootstrap';
 import TableOfContents from './TableOfContents';
 import { useWindowScroll } from 'react-use';
+import { WikiPageContext } from '../../../context/WikiPageContext';
+import { useContext } from 'react';
 
 export default function ArticleSidebar(props) {
   const { markdown } = props.article || {};
-  const { setOffcanvasShow } = props;
   const { y } = useWindowScroll()
+  const wikiPageContext = useContext(WikiPageContext);
   
-  const handleClick = () => setOffcanvasShow(false);
+  const handleClick = () => wikiPageContext.setShowOffcanvas(false);
 
   return (
     <>

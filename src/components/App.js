@@ -8,21 +8,24 @@ import Contribute from './pages/Contribute/Contribute';
 import Search from './pages/Search/Search';
 import Login from './pages/Login/Login';
 import Settings from './pages/Settings/Settings';
+import { WikiPageContextProvider } from '../context/WikiPageContext';
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/search:query" element={<Search />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/article/:articleName" element={<Article />} />
-      <Route path="/article/:articleName/contribute" element={<Contribute />} />
-      <Route
-        path="/article"
-        element={<Navigate to="/" replace />}
-      />
-    </Routes>
+    <WikiPageContextProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search:query" element={<Search />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/article/:articleName" element={<Article />} />
+        <Route path="/article/:articleName/contribute" element={<Contribute />} />
+        <Route
+          path="/article"
+          element={<Navigate to="/" replace />}
+        />
+      </Routes>
+    </WikiPageContextProvider>
   )
 }

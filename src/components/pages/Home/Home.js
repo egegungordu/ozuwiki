@@ -1,9 +1,12 @@
 import WikiPage from '../../common/WikiPage/WikiPage';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { WikiPageContext } from '../../../context/WikiPageContext';
+import { useContext } from 'react';
 
 export default function Home() {
   const navigate = useNavigate();
+  const wikiPageContext = useContext(WikiPageContext);
 
   return (
     <WikiPage
@@ -19,17 +22,20 @@ export default function Home() {
       ]}
     >
       <WikiPage.Sidebar>
-        {(setOffcanvasShow) => {
-          return (<p>
-            Im the sidebar
-          </p>)
-        }}
+        <p>
+          This is the sidebar.
+        </p>
       </WikiPage.Sidebar>
       <WikiPage.Main>
         <Row className="h-100">
           <Col className="my-auto text-center">
             <Button onClick={()=>{
               navigate('/article/test')
+            }}>
+              Click me 
+            </Button>
+            <Button onClick={()=>{
+              wikiPageContext.setShowOffcanvas(true)
             }}>
               Click me 
             </Button>

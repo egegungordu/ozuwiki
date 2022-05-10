@@ -38,9 +38,7 @@ export default function Article() {
       ]}
     >
       <WikiPage.Sidebar>
-        {(setOffcanvasShow) => {
-          return <ArticleSidebar article={article} setOffcanvasShow={setOffcanvasShow} />
-        }}
+        <ArticleSidebar article={article} />
       </WikiPage.Sidebar>
       <WikiPage.Main>
         <ArticleMain article={article}/>

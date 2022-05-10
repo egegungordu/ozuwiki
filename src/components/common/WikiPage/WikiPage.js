@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react';
+import React, { useContext } from 'react';
 import WikiNavbar from './WikiNavbar';
 import WikiNavbarItem from './WikiNavbarItem';
 import WikiBody from './WikiBody';
@@ -7,6 +7,7 @@ import WikiOffcanvas from './WikiOffcanvas';
 import WikiFooter from './WikiFooter';
 import { SIZE_SM, } from '../../../hooks/use-breakpoint';
 import { useNavigate } from 'react-router-dom';
+import { WikiPageContext } from '../../../context/WikiPageContext';
 
 export default function WikiPage(props) {
   const {
@@ -17,10 +18,10 @@ export default function WikiPage(props) {
     navigation = []
   } = props
   
-  const [showOffcanvas, setShowOffcanvas] = React.useState(false)
   const [showSearchBarFullwidth, setShowSearchBarFullwidth] = React.useState(false)
   const [children, setChildren] = React.useState({});
   const [searchInputRef, setSearchInputRef] = React.useState(null)
+  const wikiPageContext = useContext(WikiPageContext)
   const navigate = useNavigate();
 
   React.useLayoutEffect(() => {
@@ -42,7 +43,7 @@ export default function WikiPage(props) {
     focusSearchInput()
   }, [searchInputRef])
   
-  const openOffcanvas = () => setShowOffcanvas(true)
+  const openOffcanvas = () => wikiPageContext.setShowOffcanvas(true)
   const toggleSearchBarFullwidth = () => setShowSearchBarFullwidth(!showSearchBarFullwidth)
   const handleSearch = (e) => {
     e.preventDefault()
@@ -102,9 +103,9 @@ export default function WikiPage(props) {
       />
       <WikiFooter />
       <WikiOffcanvas 
-        show={showOffcanvas}
-        setShow={setShowOffcanvas}
-        content={children.Sidebar}
+        show={wikiPageContext.showOffcanvas}
+        setShow={wikiPageContext.setShowOffcanvas}
+        children={children}
       />
     </div>
   )
@@ -114,7 +115,7 @@ function Main(props) {
   return props.children
 }
 function Sidebar(props) {
-  return props.children(props.setShow)
+  return props.children
 }
 function Panel(props) {
   return props.children

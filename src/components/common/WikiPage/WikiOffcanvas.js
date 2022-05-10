@@ -1,16 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Offcanvas, Container, Row } from 'react-bootstrap';
 import React from 'react';
+import { useWindowSize } from 'react-use';
 
 export default function WikiOffcanvas(props) {
   
-  const { show = false, setShow = () => {}, content } = props;
+  const { show = false, setShow = () => {}, children } = props;
+  const { width } = useWindowSize();
   
   const handleHide = () => setShow(false);
   const handleExited = () => {
-    console.log('wtf')
     const html = document.documentElement
     html.removeAttribute('offcanvas')
   }
+  
+  React.useEffect(() => {
+    if (width > 1200) {
+      setShow(false)
+    }
+  }, [width])
   
   React.useEffect(() => {
     const html = document.documentElement
@@ -27,7 +35,7 @@ export default function WikiOffcanvas(props) {
           <Offcanvas.Header className="p-1" closeButton />
         </Row>
         <Row>
-          {content && content.props.children && content.props.children(setShow)}
+          {children.Sidebar}
         </Row>
       </Container>
     </Offcanvas>
