@@ -32,7 +32,7 @@ function Content(props) {
           </div>
         )
       })}
-      <div className={`d-flex flex-${level > props.compact - 1 ? 'column' : 'row'}`}>
+      <div className={`py-1 d-flex flex-${level > props.compact - 1 ? 'column' : 'row'}`}>
         <span className="toc-counter">{index}</span>
         <a className="ms-2 toc-content" href={'#' + id} onClick={handleClick}>{title}</a>
       </div>

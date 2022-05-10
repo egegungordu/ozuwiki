@@ -23,7 +23,7 @@ function Home(props) {
 
 function Title(props) {
   return (
-    <Nav.Item className="text-nowrap" ref={props.titleRef}>
+    <Nav.Item className="text-nowrap me-auto" ref={props.titleRef}>
       <Nav.Link className="p-2" active disabled href="#">{props.title}</Nav.Link>
     </Nav.Item>
   )
@@ -70,7 +70,7 @@ function AccountLogo(props) {
   return ( 
     <NavDropdown
       align="end"
-      title={<BsPersonFill style={{height: '40px', padding: '0', color: 'rgba(0,0,0,.55)'}} size="25px" className="mx-2" />}
+      title={<BsPersonFill style={{height: '40px', padding: '0'}} size="25px" className="mx-2" />}
       id="nekonadegoe"
       className="account-dropdown"
     >
@@ -97,7 +97,7 @@ function Navigation(props) {
   return (
     props.navigation && props.navigation.map((nav, index) => {
       return (
-        <Nav.Item key={index} className={ index === 0 ? 'ms-auto' : false } >
+        <Nav.Item key={index} >
           <Link className={`nav-link text-nowrap p-2 ${ index === 0 ? 'ms-1' : '' } ${ nav.active ? 'active disabled' : ''}`} to={nav.path}>{nav.title}</Link>
         </Nav.Item>
       )

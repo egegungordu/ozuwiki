@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-loading-skeleton/dist/skeleton.css";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import Article from './pages/Article/Article';

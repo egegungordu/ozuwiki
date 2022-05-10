@@ -4,8 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "react-loading-skeleton/dist/skeleton.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // TODO: Strict mode causes to render the app twice. Which leads to useEffect(..., []) being

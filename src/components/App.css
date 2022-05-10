@@ -2,11 +2,34 @@ html {
     --background-primary: white;
     --background-secondary: #f7f8fa;
     --background-tertiary: #ecedf2;
-    --blue: #1055bb;
-    --gray: #9aa0a7;
-    --light-gray: #cacaca;
+    --blue: #134497;
+    --tone: #9aa0a7;
+    --light-tone: #cacaca;
+    --logo: var(--bs-gray-700);
+    --text-primary: black;
+    --text-secondary: black;
+    --text-tertiary: var(--bs-gray-600);
     overflow-y: scroll;
 }
+
+@media (prefers-color-scheme: dark) {
+    /* html {
+        --background-primary: #151e2b;
+        --background-secondary: #11171e;
+        --background-tertiary: #202d3d;
+        --blue: #69a5dc;
+        --logo: #cfd1d5;
+        --light-tone: #2c4059;
+        --text-primary: white;
+        --text-secondary: #cfd1d5;
+        --text-tertiary: var(--bs-gray-600);
+    }
+    .react-loading-skeleton {
+        --base-color: #162638;
+        --highlight-color: var(--light-tone);
+    } */
+}
+        
 
 html[offcanvas="true"] {
     overflow-y: clip;
@@ -14,6 +37,7 @@ html[offcanvas="true"] {
 
 body {
     background-color: var(--background-secondary);
+    color: var(--text-secondary);
 }
 
 .offcanvas-padding {
@@ -27,6 +51,10 @@ body {
 }
 
 a {
+    color: var(--blue)
+}
+
+a:hover {
     color: var(--blue)
 }
 
@@ -60,6 +88,7 @@ a {
 
 .toc-container-article {
     overflow-x: hidden;
+    color: var(--text-tertiary);
 }
 
 .toc-container-article.scrollable{
@@ -88,6 +117,7 @@ a {
 #article-title {
     font-family: 'Times New Roman', Times, serif;
     background-color: var(--background-primary);
+    color: var(--text-primary);
 }
 
 .panel-column {
@@ -112,6 +142,10 @@ a {
     position: absolute;
 }
 
+.dropdown-menu {
+    background-color: var(--background-primary);
+}
+
 .toc-counter {
     color: var(--gray)
 }
@@ -134,11 +168,11 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--light-gray);
+    background-color: var(--light-tone);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--gray);
+    background-color: var(--tone);
 }
 
 .search-offcanvas {
@@ -156,6 +190,7 @@ a {
 
 #nekonadegoe {
     padding: 0;
+    color: var(--logo);
 }
 
 #nekonadegoe2::after {
@@ -171,7 +206,7 @@ a {
     font-size: 1.2rem;
     line-height: 1;
     background-color: transparent;
-    color: var(--bs-gray-600);
+    color: var(--logo);
     height: 40px;
 }
 
@@ -185,6 +220,19 @@ a {
 
 .nav-link {
     transition: none;
+    color: var(--blue);
+}
+
+.nav-link:hover {
+    color: var(--blue);
+}
+
+.nav-link:focus {
+    color: var(--blue);
+}
+
+.nav-link.disabled {
+    color: var(--text-secondary);
 }
 
 .offcanvas-header .btn-close {
@@ -199,4 +247,16 @@ a {
 
 #navbar-item-fullwidth {
     background-color: var(--background-secondary);
+}
+
+.form-control {
+    color: var(--text-secondary) !important;
+}
+
+.border-start {
+    border-color: var(--text-tertiary) !important;
+}
+
+.primary-text {
+    color: var(--text-primary);
 }

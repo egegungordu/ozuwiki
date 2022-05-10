@@ -12,7 +12,7 @@ export default function ArticleMain(props) {
     
   return (
     <div className="p-5">
-      <div className="d-none d-sm-block">
+      <div className="d-none d-sm-block primary-text">
         <h1>{name || <Skeleton />}</h1>
         <hr></hr>
       </div>
