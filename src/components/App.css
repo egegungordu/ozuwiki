@@ -260,3 +260,13 @@ a:hover {
 .primary-text {
     color: var(--text-primary);
 }
+
+.markdown pre {
+    white-space: unset;
+}
+
+.markdown img {
+    max-width: 500px;
+    width: 100%;
+}
+

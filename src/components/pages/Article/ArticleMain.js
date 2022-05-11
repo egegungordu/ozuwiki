@@ -17,7 +17,7 @@ export default function ArticleMain(props) {
         <hr></hr>
       </div>
       {markdown 
-        ? <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]}
+        ? <ReactMarkdown className="markdown" children={markdown} remarkPlugins={[remarkGfm]}
             components = {{
               h1: HeadingRenderer,
               h2: HeadingRenderer,
