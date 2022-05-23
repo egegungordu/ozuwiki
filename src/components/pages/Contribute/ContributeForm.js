@@ -136,10 +136,14 @@ export default function ContributeForm(props) {
                 {article && article.details.map((detail, index) => {
                   return (
                     <div key={detail.id} className="d-flex py-3 flex-column">
-                      <Form.Control id={`detailTitle${index}`} required maxLength={maxDetailTitleLength} placeholder="Detail Title" defaultValue={detail.title} />
-                      <Form.Control.Feedback type="invalid" >Detail Title is required!</Form.Control.Feedback>
-                      <Form.Control id={`detailDescription${index}`} required maxLength={maxDetailDescriptionLength} className="mt-2" as="textarea" rows="3" placeholder="Detail Description" defaultValue={detail.description} />
-                      <Form.Control.Feedback type="invalid" >Detail Description is required!</Form.Control.Feedback>
+                      <Form.Group>
+                        <Form.Control id={`detailTitle${index}`} required maxLength={maxDetailTitleLength} placeholder="Detail Title" defaultValue={detail.title} />
+                        <Form.Control.Feedback type="invalid" >Detail Title is required!</Form.Control.Feedback>
+                      </Form.Group>
+                      <Form.Group>
+                        <Form.Control id={`detailDescription${index}`} required maxLength={maxDetailDescriptionLength} className="mt-2" as="textarea" rows="3" placeholder="Detail Description" defaultValue={detail.description} />
+                        <Form.Control.Feedback type="invalid" >Detail Description is required!</Form.Control.Feedback>
+                      </Form.Group>
                       <Button variant="outline-danger" className="mt-2" size="sm" onClick={() => handleRemoveDetail(index)}>
                         <i className="">Remove</i>
                       </Button>
