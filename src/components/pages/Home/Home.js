@@ -29,15 +29,15 @@ export default function Home() {
       <WikiPage.Main>
         <Row className="h-100">
           <Col className="my-auto text-center">
-            <Button onClick={()=>{
-              navigate('/article/test')
+            <Button onClick={() => {
+              navigate('/article/CS_391')
             }}>
-              Click me 
+              Click me
             </Button>
-            <Button onClick={()=>{
+            <Button onClick={() => {
               wikiPageContext.setShowOffcanvas(true)
             }}>
-              Click me 
+              Click me
             </Button>
           </Col>
         </Row>
