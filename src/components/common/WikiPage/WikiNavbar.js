@@ -5,7 +5,7 @@ import { useMeasure } from 'react-use';
 import useBreakpoint from '../../../hooks/use-breakpoint';
 
 export default function WikiNavbar(props) {
-  const { 
+  const {
     sidebarRule = '',
     panelRule = '',
     sidebarExists = false,
@@ -14,8 +14,8 @@ export default function WikiNavbar(props) {
 
   const [children, setChildren] = React.useState({});
   const [mainItems, setMainItems] = React.useState([]);
-  const [sidebarRef, { width: sidebarWidth }] = useMeasure() 
-  const [panelRef, { width: panelWidth }] = useMeasure() 
+  const [sidebarRef, { width: sidebarWidth }] = useMeasure()
+  const [panelRef, { width: panelWidth }] = useMeasure()
   const breakpoint = useBreakpoint();
 
   React.useLayoutEffect(() => {
@@ -28,6 +28,7 @@ export default function WikiNavbar(props) {
       children[props.children.type.displayName] = props.children;
     }
     setChildren(children);
+    // TODO: fix first render bug
     const isSidebarCollapsed = sidebarWidth <= 0
     const isPanelCollapsed = panelWidth <= 0
     const mainItems = []
@@ -36,7 +37,7 @@ export default function WikiNavbar(props) {
         <React.Fragment key="sidebar-collapsed">
           {children.SidebarCollapsed}
         </React.Fragment>
-      ) 
+      )
     }
     children.Main && mainItems.push(
       <React.Fragment key="main">
@@ -52,29 +53,25 @@ export default function WikiNavbar(props) {
     }
     setMainItems(mainItems)
   }, [props.children, breakpoint, sidebarWidth, panelWidth]);
-  
-  React.useEffect(() => {
-  }, [breakpoint, children])
-  
 
   return (
     <>
-    <Navbar id="wiki-nav" fixed="top" expand="lg" className="ps-0 py-0 d-flex flex-column">
-      <Container fluid="xxl" className="px-0 px-md-5 px-xxl-0" >
-        {sidebarExists && <Col ref={sidebarRef} xs={4} xl={3} className={`my-0 d-flex flex-row ${sidebarRule}`}>
-          {children.Sidebar}
-        </Col>}
-        <Col className="my-0 d-flex flex-row">
-          {mainItems}
-        </Col>
-        {panelExists && <Col ref={panelRef} xs={4} xl={3} className={`my-0 d-flex flex-row ${panelRule}`}>
-          {children.Panel}
-        </Col>}
-      </Container>
-      <Container fluid="xxl" className="px-0 px-md-5 px-xxl-0" id="navbar-item-fullwidth">
-        {children.Fullwidth}
-      </Container>
-    </Navbar>
+      <Navbar id="wiki-nav" fixed="top" expand="lg" className="ps-0 py-0 d-flex flex-column">
+        <Container fluid="xxl" className="px-0 px-md-5 px-xxl-0" >
+          {sidebarExists && <Col ref={sidebarRef} xs={4} xl={3} className={`my-0 d-flex flex-row ${sidebarRule}`}>
+            {children.Sidebar}
+          </Col>}
+          <Col className="my-0 d-flex flex-row">
+            {mainItems}
+          </Col>
+          {panelExists && <Col ref={panelRef} xs={4} xl={3} className={`my-0 d-flex flex-row ${panelRule}`}>
+            {children.Panel}
+          </Col>}
+        </Container>
+        <Container fluid="xxl" className="px-0 px-md-5 px-xxl-0" id="navbar-item-fullwidth">
+          {children.Fullwidth}
+        </Container>
+      </Navbar>
     </>
   )
 }

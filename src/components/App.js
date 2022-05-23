@@ -9,6 +9,7 @@ import Search from './pages/Search/Search';
 import Login from './pages/Login/Login';
 import Settings from './pages/Settings/Settings';
 import { WikiPageContextProvider } from '../context/WikiPageContext';
+import NotFound from './pages/NotFound/NotFound';
 
 export default function App() {
   return (
@@ -25,6 +26,8 @@ export default function App() {
           path="/article"
           element={<Navigate to="/" replace />}
         />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </WikiPageContextProvider>
   )

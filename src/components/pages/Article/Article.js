@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React from 'react';
-import { getArticle } from '../../../api/ArticleAPI';
+import { getArticle, postContribution } from '../../../api/ArticleAPI';
 import WikiPage from '../../common/WikiPage/WikiPage';
 import ArticleMain from './ArticleMain';
 import ArticleSidebar from './ArticleSidebar';
@@ -10,15 +10,21 @@ import ArticlePanel from './ArticlePanel';
 export default function Article() {
   const [article, setArticle] = React.useState(null);
   const params = useParams();
-  
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     const asyncSet = async () => {
       const response = await getArticle(params.articleName, 3);
-      setArticle(response)
+      console.log(response)
+      if (response) {
+        setArticle(response)
+      } else {
+        navigate('/404');
+      }
     }
     asyncSet()
   }, []);
-  
+
   return (
     <WikiPage
       title={'Article'}
@@ -37,16 +43,15 @@ export default function Article() {
         }
       ]}
     >
-      <WikiPage.Sidebar>
+      <WikiPage.Sidebar >
         <ArticleSidebar article={article} />
       </WikiPage.Sidebar>
       <WikiPage.Main>
-        <ArticleMain article={article}/>
+        <ArticleMain article={article} />
       </WikiPage.Main>
       <WikiPage.Panel>
         <ArticlePanel article={article} />
       </WikiPage.Panel>
-    </WikiPage>
+    </WikiPage >
   )
 }
-      

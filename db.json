@@ -1,39 +1,78 @@
 {
-    "articles": [
+  "articles": [
+    {
+      "id": "CS_391",
+      "name": "CS 391",
+      "imageUrl": "https://picsum.photos/id/1/5616/3744",
+      "imageDescription": "A student taking the CS 391 course (1952 colorized)",
+      "details": [
         {
-            "name": "CS 391",
-            "imageUrl": "https://picsum.photos/id/1/5616/3744",
-            "imageDescription": "A student taking the CS 391 course (1952 colorized)",
-            "details": [
-                {
-                    "id": 0,
-                    "title": "Field",
-                    "description": "Computer Science"
-                },
-                {
-                    "id": 1,
-                    "title": "Year",
-                    "description": "2022"
-                },
-                {
-                    "id": 2,
-                    "title": "Semester",
-                    "description": "Fall"
-                },
-                {
-                    "id": 3,
-                    "title": "Instructor",
-                    "description": "Esma Meral"
-                }
-            ],
-            "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with Reactjs.",
-            "contributors": [
-                {
-                    "name": "Ege Güngördü",
-                    "email": "ege.gungordu@ozu.edu.tr",
-                    "date": "2022-05-23T07:46:36.611Z"
-                }
-            ]
+          "id": 0,
+          "title": "Field",
+          "description": "Computer Science"
+        },
+        {
+          "id": 1,
+          "title": "Year",
+          "description": "2022"
+        },
+        {
+          "id": 2,
+          "title": "Semester",
+          "description": "Fall"
+        },
+        {
+          "id": 3,
+          "title": "Instructor",
+          "description": "Esma Meral"
         }
-    ]
+      ],
+      "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with [Reactjs](https://reactjs.org/).\n## Course Content\n### Introduction\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis.",
+      "contributors": [
+        {
+          "name": "Ege Güngördü",
+          "email": "ege.gungordu@ozu.edu.tr",
+          "date": "2022-05-23T07:46:36.611Z"
+        }
+      ]
+    }
+  ],
+  "pendingContributions": [
+    {
+      "id": "758829e2-7530-4498-a381-5741f6fefe42",
+      "articleId": "CS_391",
+      "contributorName": "Erik",
+      "contributorEmail": "erik.johnson@ozu.edu.tr",
+      "date": "2022-05-23T20:35:44.956Z",
+      "contribution": {
+        "name": "CS 391",
+        "imageUrl": "https://picsum.photos/id/1/5616/3744",
+        "imageDescription": "A student taking the CS 391 course (1942 colorized)",
+        "details": [
+          {
+            "id": 0,
+            "title": "Field",
+            "description": "Computer Science"
+          },
+          {
+            "id": 1,
+            "title": "Year",
+            "description": "2022"
+          },
+          {
+            "id": 2,
+            "title": "Semester",
+            "description": "Fall"
+          },
+          {
+            "id": 3,
+            "title": "Instructor",
+            "description": "Esma Meral"
+          }
+        ],
+        "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with [Reactjs](https://reactjs.org/).\n## Course Content\n### Introduction\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis.",
+        "comment": "The image description year was changed to 1942. \nOld description was wrong because..."
+      }
+    }
+  ]
 }

@@ -6,7 +6,7 @@ export default function TableOfContents(props) {
   const contentsComponents = contents.map((content, index) => {
     return <Content key={index} content={content} compact={compact} onClick={props.onLinkClick} />
   })
- 
+
   return (
     <div className="d-flex flex-column">
       {props.markdown ? contentsComponents : <SkeletonTable />}
@@ -16,7 +16,7 @@ export default function TableOfContents(props) {
 
 function Content(props) {
   const { index, level, title, id } = props.content
-  
+
   const handleClick = (e) => {
     e.preventDefault()
     const top = document.getElementById(id).offsetTop
@@ -26,7 +26,7 @@ function Content(props) {
 
   return (
     <div className="d-flex flex-row">
-      {Array.from({length: level}).map((_, index) => {
+      {Array.from({ length: level }).map((_, index) => {
         return (
           <div key={index} className="ms-1 me-3 border-start">
           </div>
@@ -40,22 +40,22 @@ function Content(props) {
   )
 }
 
-function calculateTableOfContents(article) {
+function calculateTableOfContents(markdown) {
   // TODO: this matches unvalid headers that are longer than 6
   const regex = /(#{1,6}) (.*)/g
   const contents = []
   const counters = new Array(6).fill(0)
   let match
-  while(null != (match=regex.exec(article))) {
+  while (null != (match = regex.exec(markdown))) {
     const level = match[1].length - 1
     const title = match[2]
     const id = title.replace(/\s/g, '-').toLowerCase()
     counters[level]++
-    for(let i = level+1; i < 6; i++) {
+    for (let i = level + 1; i < 6; i++) {
       counters[i] = 0
     }
     contents.push({
-      index: counters.slice(0, level+1).join('.'),
+      index: counters.slice(0, level + 1).join('.'),
       level: level,
       title: title,
       id: id

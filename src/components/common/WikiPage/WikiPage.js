@@ -28,7 +28,9 @@ export default function WikiPage(props) {
     if (!props.children) return;
     if (Array.isArray(props.children)) {
       props.children.forEach(child => {
-        children[child.type.displayName] = child;
+        if (child) {
+          children[child.type.displayName] = child;
+        }
       })
     } else {
       children[props.children.type.displayName] = props.children;

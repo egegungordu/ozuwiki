@@ -1,47 +1,60 @@
+import axios from 'axios';
 
-const articleExists = async (articleName) => {
+axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
-  const response = await new Promise((resolve, reject) => {
-    const exists = Math.floor(Math.random() * 5) === 1
-    setTimeout(() => {
-      resolve(exists)
-    }, 800)
-  });
+const fillSpacesWithUnderscores = (str) => {
+  return str.replace(/\s/g, '_');
+};
 
-  return response;
+const articleExists = async (name) => {
+  const articleId = fillSpacesWithUnderscores(name);
+  try {
+    await axios.get(`/articles/${articleId}`);
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
 
-
-const getArticle = async (name, length = 2) => {
-
-  let fullMarkdown = ''
-  for (let i = 1; i <= length; i++) {
-    const response = await fetch(`https://jaspervdj.be/lorem-markdownum/markdown.txt?num-blocks=${i * 2}`)
-    const markdown = await response.text()
-    const randomX = Math.floor(Math.random() * 50) + 10
-    const randomY = Math.floor(Math.random() * 50) + 10
-    const image = `![](https://picsum.photos/${400 + randomX}/${200 + randomY})`
-    fullMarkdown += markdown + '\n\n' + image + '\n\n'
-  }
-
-  return {
-    name: name,
-    imageUrl: 'https://picsum.photos/350',
-    imageDescription: 'Placeholder image',
-    markdown: fullMarkdown,
-    details: [
-      {
-        id: 0,
-        title: 'Title 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      },
-      {
-        id: 1,
-        title: 'Title 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+const getArticle = async (name) => {
+  const articleId = fillSpacesWithUnderscores(name);
+  try {
+    const response = await axios.get(`/articles/${articleId}`, {
+      params: {
+        _embed: 'pendingContributions'
       }
-    ]
+    });
+    return response.data;
+  } catch {
+    return null;
   }
 }
 
-export { getArticle, articleExists };
+const getArticles = async (search = '', page = 1, limit = 5, sort = '', order = '') => {
+  try {
+    const response = await axios.get('/articles', {
+      params: {
+        _q: search,
+        _page: page,
+        _limit: limit,
+        _sort: sort,
+        _order: order
+      }
+    });
+    return response.data;
+  } catch {
+    return null;
+  }
+}
+
+const postContribution = async (contribution) => {
+  try {
+    const response = await axios.post(`/pendingContributions`, contribution)
+    return response.data;
+  } catch {
+    return null;
+  }
+}
+
+export { getArticle, getArticles, articleExists, postContribution };
