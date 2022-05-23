@@ -26,10 +26,10 @@ export default function ArticlePanel(props) {
           {details.map((detail, index) => {
             return (
               <Row key={index} className="mb-3">
-                <Col xs={4}>
+                <Col xs={4} sm={12} xl={4}>
                   <h6 className="m-0">{detail ? detail.title : <Skeleton />}</h6>
                 </Col>
-                <Col xs={8}>
+                <Col xs={8} sm={12} xl={8} className="ps-xl-3">
                   <p className="m-0">{detail ? detail.description : <Skeleton count={4} />}</p>
                 </Col>
               </Row>
@@ -39,10 +39,10 @@ export default function ArticlePanel(props) {
         <hr className="m-2"></hr>
         <Container fluid className="p-0">
           <Row>
-            <Col xs={4}>
+            <Col xs={4} sm={12} xl={4}>
               <h6 className="m-0">Contributors</h6>
             </Col>
-            <Col xs={8}>
+            <Col xs={8} sm={12} xl={8} className="ps-xl-3">
               <p className="m-0">
                 {contributors.map((contributor, index) => {
                   return (
@@ -56,7 +56,7 @@ export default function ArticlePanel(props) {
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col className="mb-2">
               <small className="text-muted">
                 Pending contributions: {pendingContributions.length}
               </small>
