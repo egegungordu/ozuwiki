@@ -29,7 +29,7 @@
   "scripts": {
     "start": "npm-run-all --parallel start:*",
     "start:react": "react-scripts start",
-    "start:server": "json-server --watch db.json",
+    "start:server": "json-server --watch db.json --port 3005",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

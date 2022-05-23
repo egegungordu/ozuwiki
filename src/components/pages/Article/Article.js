@@ -19,7 +19,7 @@ export default function Article() {
       if (response) {
         setArticle(response)
       } else {
-        navigate('/404');
+        navigate('/404', { replace: true });
       }
     }
     asyncSet()
