@@ -1,0 +1,39 @@
+{
+    "articles": [
+        {
+            "name": "CS 391",
+            "imageUrl": "https://picsum.photos/id/1/5616/3744",
+            "imageDescription": "A student taking the CS 391 course (1952 colorized)",
+            "details": [
+                {
+                    "id": 0,
+                    "title": "Field",
+                    "description": "Computer Science"
+                },
+                {
+                    "id": 1,
+                    "title": "Year",
+                    "description": "2022"
+                },
+                {
+                    "id": 2,
+                    "title": "Semester",
+                    "description": "Fall"
+                },
+                {
+                    "id": 3,
+                    "title": "Instructor",
+                    "description": "Esma Meral"
+                }
+            ],
+            "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with Reactjs.",
+            "contributors": [
+                {
+                    "name": "Ege Güngördü",
+                    "email": "ege.gungordu@ozu.edu.tr",
+                    "date": "2022-05-23T07:46:36.611Z"
+                }
+            ]
+        }
+    ]
+}
