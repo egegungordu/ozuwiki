@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext } from 'react';
+import React from 'react';
 import WikiNavbar from './WikiNavbar';
 import WikiNavbarItem from './WikiNavbarItem';
 import WikiBody from './WikiBody';
 import WikiOffcanvas from './WikiOffcanvas';
 import WikiFooter from './WikiFooter';
 import { SIZE_SM, } from '../../../hooks/use-breakpoint';
-import { useNavigate } from 'react-router-dom';
-import { WikiPageContext } from '../../../context/WikiPageContext';
+import { useLocalStorage } from 'react-use';
 
 export default function WikiPage(props) {
   const {
@@ -15,14 +14,14 @@ export default function WikiPage(props) {
     showHome = false,
     showSearch = false,
     showAccount = false,
+    showThemeToggle = true,
     navigation = []
   } = props
-  
+
   const [showSearchBarFullwidth, setShowSearchBarFullwidth] = React.useState(false)
   const [children, setChildren] = React.useState({});
   const [searchInputRef, setSearchInputRef] = React.useState(null)
-  const wikiPageContext = useContext(WikiPageContext)
-  const navigate = useNavigate();
+  const [theme] = useLocalStorage('theme', 'light')
 
   React.useLayoutEffect(() => {
     const children = {};
@@ -35,38 +34,37 @@ export default function WikiPage(props) {
       children[props.children.type.displayName] = props.children;
     }
     setChildren(children);
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark-mode')
+    }
   }, [props.children]);
-  
+
   const focusSearchInput = () => { searchInputRef && searchInputRef.focus() }
- 
+
   React.useEffect(() => {
     focusSearchInput()
   }, [searchInputRef])
-  
-  const openOffcanvas = () => wikiPageContext.setShowOffcanvas(true)
+
   const toggleSearchBarFullwidth = () => setShowSearchBarFullwidth(!showSearchBarFullwidth)
-  const handleSearch = (e) => {
-    e.preventDefault()
-    navigate('/search?q=' + e.target[0].value)
-  }
 
   const sidebarExists = children.Sidebar ? true : false
   const panelExists = children.Panel ? true : false
-  
-  const sidebarRule = sidebarExists ? 'd-none d-xl-block' : 'd-none d-sm-block' 
+
+  const sidebarRule = sidebarExists ? 'd-none d-xl-block' : 'd-none d-sm-block'
   const panelRule = 'd-none d-sm-flex'
-  
+
   const accountName = 'Mr. Obama'
-  
+
   // TODO: Shrink navigation elements when screen is small
-  
+
   return (
     <div className="min-vh-100 d-flex flex-column">
-      <WikiNavbar 
+      <WikiNavbar
         sidebarRule={sidebarRule}
         panelRule={panelRule}
         sidebarExists={sidebarExists}
-        panelExists={panelExists} 
+        panelExists={panelExists}
       >
         <WikiNavbar.Main>
           {showHome && <WikiNavbarItem.Home />}
@@ -74,27 +72,32 @@ export default function WikiPage(props) {
           <WikiNavbarItem.Navigation navigation={navigation} />
         </WikiNavbar.Main>
         <WikiNavbar.Sidebar>
-          {showSearch && <WikiNavbarItem.SearchBar onSubmit={handleSearch} />}
+          {showSearch && <WikiNavbarItem.SearchBar />}
         </WikiNavbar.Sidebar>
         <WikiNavbar.SidebarCollapsed>
-          {sidebarExists && <WikiNavbarItem.Menu onClick={openOffcanvas} />}
+          {sidebarExists && <WikiNavbarItem.Menu />}
           {showSearch && <WikiNavbarItem.SearchButton onClick={toggleSearchBarFullwidth} />}
         </WikiNavbar.SidebarCollapsed>
         <WikiNavbar.Panel>
+          {showThemeToggle && <WikiNavbarItem.ThemeToggle />}
           {showAccount && <WikiNavbarItem.AccountName className="ms-auto" accountName={accountName} />}
         </WikiNavbar.Panel>
         <WikiNavbar.PanelCollapsed>
           {(breakpoint) => {
             // magic
-            return showAccount && (breakpoint.width < SIZE_SM.width ? <WikiNavbarItem.AccountLogo />
-                                                        : !panelExists && <WikiNavbarItem.AccountName accountName={accountName} />)
+            return (
+              <>
+                {showThemeToggle && <WikiNavbarItem.ThemeToggle />}
+                {showAccount && (breakpoint.width < SIZE_SM.width ? <WikiNavbarItem.AccountLogo />
+                  : !panelExists && <WikiNavbarItem.AccountName accountName={accountName} />)}
+              </>
+            )
           }}
         </WikiNavbar.PanelCollapsed>
         <WikiNavbar.Fullwidth>
-          {showSearchBarFullwidth && <WikiNavbarItem.SearchBarFullwidth 
-            onBlur={toggleSearchBarFullwidth} 
-            callbackRef={setSearchInputRef}
-            onSubmit={handleSearch} />}
+          {showSearchBarFullwidth && <WikiNavbarItem.SearchBarFullwidth
+            onBlur={toggleSearchBarFullwidth}
+            callbackRef={setSearchInputRef} />}
         </WikiNavbar.Fullwidth>
       </WikiNavbar>
       <WikiBody
@@ -102,9 +105,7 @@ export default function WikiPage(props) {
         sidebarRule={sidebarRule}
       />
       <WikiFooter />
-      <WikiOffcanvas 
-        show={wikiPageContext.showOffcanvas}
-        setShow={wikiPageContext.setShowOffcanvas}
+      <WikiOffcanvas
         children={children}
       />
     </div>

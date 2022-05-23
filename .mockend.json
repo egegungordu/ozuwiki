@@ -1,0 +1,78 @@
+{
+    "Article": {
+        "name": {
+            "loremWords": { "minLength": 1, "maxLength": 3 }
+        },
+        "lastModified": {
+            "dateTime": {
+                "min": "2020-01-01T00:00:00Z",
+                "max": "2022-01-01T00:00:00Z"
+            }
+        },
+        "pendingContributions": {
+            "hasMany": "ArticleContribution"
+        },
+        "approvedContributions": {
+            "hasMany": "ArticleContribution"
+        },
+        "imageUrl": {
+            "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
+        },
+        "imageDescription": {
+            "loremSentences": { "minLength": 1, "maxLength": 3 }
+        },
+        "details": [
+            [
+                {
+                    "title": {
+                        "loremWords": { "minLength": 1, "maxLength": 3 }
+                    },
+                    "description": {
+                        "loremSentences": { "minLength": 1, "maxLength": 3 }
+                    }
+                },
+                {
+                    "title": {
+                        "loremWords": { "minLength": 1, "maxLength": 3 }
+                    },
+                    "description": {
+                        "loremSentences": { "minLength": 1, "maxLength": 3 }
+                    }
+                }
+            ],
+            [
+                {
+                    "title": {
+                        "loremWords": { "minLength": 1, "maxLength": 3 }
+                    },
+                    "description": {
+                        "loremSentences": { "minLength": 1, "maxLength": 3 }
+                    }
+                }
+            ],
+            [{}]
+        ],
+        "markdown": {
+            "loremParagraphs": { "minLength": 200, "maxLength": 500 }
+        }
+    },
+    "ArticleContribution": {
+        "contributor": {
+            "belongsTo": "User"
+        },
+        "date": {
+            "dateTime": {
+                "min": "2020-01-01T00:00:00Z",
+                "max": "2022-01-01T00:00:00Z"
+            }
+        }
+    },
+    "User": {
+        "name": {
+            "loremWords": { "minLength": 1, "maxLength": 3 }
+        },
+        "email": {
+            "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+        }
+    }
+}

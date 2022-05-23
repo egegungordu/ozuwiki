@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import React from 'react';
 import WikiPage from "../../common/WikiPage/WikiPage";
+import ContributeMain from "./ContributeMain";
+import ContributePanel from "./ContributePanel";
 
 export default function Contribute(props) {
   const params = useParams();
@@ -23,14 +25,10 @@ export default function Contribute(props) {
       ]}
     >
       <WikiPage.Main>
-        <p>
-          Im the main content
-        </p>
+        <ContributeMain />
       </WikiPage.Main>
       <WikiPage.Panel>
-        <p>
-          Im the panel
-        </p>
+        <ContributePanel />
       </WikiPage.Panel>
     </WikiPage>
   )
