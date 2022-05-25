@@ -7,7 +7,7 @@ export const WikiPageContextProvider = (props) => {
 
     return (
         <WikiPageContext.Provider value={{ showOffcanvas, setShowOffcanvas }}>
-           {props.children} 
+            {props.children}
         </WikiPageContext.Provider>
     )
 }

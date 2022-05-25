@@ -6,11 +6,22 @@ import WikiPage from '../../common/WikiPage/WikiPage';
 import ArticleMain from './ArticleMain';
 import ArticleSidebar from './ArticleSidebar';
 import ArticlePanel from './ArticlePanel';
+import { addToHistory } from "../../common/WikiPage/WikiHistory";
 
 export default function Article() {
   const [article, setArticle] = React.useState(null);
   const params = useParams();
   const navigate = useNavigate();
+
+  //this part adds the page to history when it is opened
+  //TODO add link to page and fix the name
+  /*const history = JSON.parse(window.localStorage.getItem("history"));
+  let index = history.indexOf(params.articleName);
+  if(index > -1)
+  {history.splice(index, 1)};
+  history.unshift(params.articleName)
+  window.localStorage.setItem("history", JSON.stringify(history));*/
+  addToHistory(params.articleName);
 
   React.useEffect(() => {
     const asyncSet = async () => {
