@@ -25,7 +25,6 @@ export default function HomeSidebar() {
           <li key={item}>{item}</li></a>})}
       </ul>
       </div>
-    
     </>
   )
 }
