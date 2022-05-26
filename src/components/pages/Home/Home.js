@@ -1,12 +1,8 @@
 import WikiPage from '../../common/WikiPage/WikiPage';
-import { Button, Col, Row } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { WikiPageContext } from '../../../context/WikiPageContext';
-import { useContext } from 'react';
+import HomeMain from './HomeMain';
+import HomeSidebar from "./HomeSidebar"
 
 export default function Home() {
-  const navigate = useNavigate();
-  const wikiPageContext = useContext(WikiPageContext);
 
   return (
     <WikiPage
@@ -22,25 +18,11 @@ export default function Home() {
       ]}
     >
       <WikiPage.Sidebar>
-        <p>
-          This is the sidebar.
-        </p>
+        <HomeSidebar/>
       </WikiPage.Sidebar>
       <WikiPage.Main>
-        <Row className="h-100">
-          <Col className="my-auto text-center">
-            <Button onClick={() => {
-              navigate('/article/CS_391')
-            }}>
-              Click me
-            </Button>
-            <Button onClick={() => {
-              wikiPageContext.setShowOffcanvas(true)
-            }}>
-              Click me
-            </Button>
-          </Col>
-        </Row>
+        <HomeMain/>
+        
       </WikiPage.Main>
     </WikiPage>
   )

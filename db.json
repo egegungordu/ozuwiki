@@ -74,6 +74,78 @@
         "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with [Reactjs](https://reactjs.org/).\n## Course Content\n### Introduction\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis.",
         "comment": "The image description year was changed to 1942. \nOld description was wrong because..."
       }
+    },
+    {
+      "id": "01548f10-7153-4634-bced-caef70228867",
+      "articleId": "CS_391",
+      "contributorName": "Erik",
+      "contributorEmail": "erik.johnson@ozu.edu.tr",
+      "date": "2022-05-24T15:49:29.609Z",
+      "contribution": {
+        "name": "CS 391",
+        "imageUrl": "https://picsum.photos/id/1/5616/3744",
+        "imageDescription": "A student taking the CS 391 course (1952 colorized)",
+        "details": [
+          {
+            "id": 0,
+            "title": "Field",
+            "description": "Computer Science"
+          },
+          {
+            "id": 1,
+            "title": "Year",
+            "description": "2022"
+          },
+          {
+            "id": 2,
+            "title": "Semester",
+            "description": "Fall"
+          },
+          {
+            "id": 3,
+            "title": "Instructor",
+            "description": "Esma Meral"
+          }
+        ],
+        "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with [Reactjs](https://reactjs.org/).\n## Course Content\n### Introduction\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis.",
+        "comment": "o"
+      }
+    },
+    {
+      "id": "bfa82a0a-a090-432b-8343-7cdc3213d4d1",
+      "articleId": "CS_391",
+      "contributorName": "Erik",
+      "contributorEmail": "erik.johnson@ozu.edu.tr",
+      "date": "2022-05-24T15:49:59.537Z",
+      "contribution": {
+        "name": "CS 391",
+        "imageUrl": "",
+        "imageDescription": "",
+        "details": [
+          {
+            "id": 0,
+            "title": "Field",
+            "description": "Computer Science"
+          },
+          {
+            "id": 1,
+            "title": "Year",
+            "description": "2022"
+          },
+          {
+            "id": 2,
+            "title": "Semester",
+            "description": "Fall"
+          },
+          {
+            "id": 3,
+            "title": "Instructor",
+            "description": "Esma Meral"
+          }
+        ],
+        "markdown": "In this class, students learn modern technologies and frameworks to develop Web apps. Main focus is on client side rendering with [Reactjs](https://reactjs.org/).\n## Course Content\n### Introduction\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis.",
+        "comment": "aaaaa"
+      }
     }
   ]
 }

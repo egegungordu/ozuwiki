@@ -5,7 +5,6 @@ export default function Search() {
   return (
     <WikiPage
       showAccount={true}>
-      
     </WikiPage>
   )
 }
