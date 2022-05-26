@@ -19,7 +19,7 @@ export default function SuccessModal(props) {
         <p>
           Thank you for your contribution! Your submission will be reviewed by our team. When the review is complete, you will receive an email.
         </p>
-        <p>
+        <p className="m-0">
           If you have any questions, please contact us at <a href="mailto: ozuwiki@ozu.edu.tr"> ozuwiki@ozu.edu.tr</a>
         </p>
       </Modal.Body>

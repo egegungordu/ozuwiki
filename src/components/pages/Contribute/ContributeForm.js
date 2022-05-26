@@ -99,7 +99,7 @@ export default function ContributeForm(props) {
         </span>
       </h2>
       <fieldset >
-        <Form.Group className="mb-3 col col-12 col-sm-6 col-md-4" >
+        <Form.Group className="mb-3 col col-12" >
           <Form.Label htmlFor="name">Article Name</Form.Label>
           <div className="d-flex align-items-top">
             <div>
