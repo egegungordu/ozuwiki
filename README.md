@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+<p align="center">
+  <h1 align="center">OzuWiki<br></br></h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    OzuWiki brings the latest information on Özyeğin University to the web. Faculties, Courses, Departments, Clubs, Events, and more, through the lens of the Özyeğin University Students.
+    <br>
+  </p>
 
-## Available Scripts
+</p>
 
-In the project directory, you can run:
+- [Quick start](#quick-start)
+  - [Optional](#optional)
+- [Dependencies Explained](#dependencies-explained)
+- [File structure](#file-structure)
+- [Detailed project description](#detailed-project-description)
+- [Responsibilities of the project members](#responsibilities-of-the-project-members)
 
-### `npm start`
+## Quick start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was bootstrapped using [create-react-app](https://create-react-app.dev/). To run the app on your local machine, follow the instructions:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+  > Node 14 or higher is required.
+- Clone the repository with `git clone https://github.com/egegungordu/ozuwiki.git`
+- Change directory to `ozuwiki` with `cd ozuwiki`
+- Install the dependencies with `npm install`
+- Start the development build with `npm start`
+  > This deploys the app to [http://localhost:3000](http://localhost:3000), with a mock database served at [http://localhost:3005/db](http://localhost:3005/db).
 
-### `npm test`
+### Optional
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Web app and the mock database can be deployed seperately with `npm start:react` and `npm start:server`
 
-### `npm run build`
+## Dependencies Explained
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+TODO: more detail
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [axios](https://npmjs.com/package/axios) - HTTP client for making HTTP requests
+- [bootstrap](https://getbootstrap.com/) - CSS framework for making responsive web apps
+- [json-server](https://www.npmjs.com/package/json-server) - Local mock database
+- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Run multiple commands in parallel
+- [react-bootstrap](https://react-bootstrap.github.io/) - React components for Bootstrap
+- [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - React router for handling routes
+- [react-icons](https://react-icons.netlify.com/) - React icon components
+- [react-use](https://www.npmjs.com/package/react-use) - Many useful hooks for React
+- [uuid](https://www.npmjs.com/package/uuid) - Generate unique IDs
+- [react-markdown](https://www.npmjs.com/package/react-markdown) - Markdown renderer component
+- [remark-gfm](https://www.npmjs.com/package/remark-gfm) - Plugin for markdown renderer to parse Custom GFM syntax
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## File structure
 
-### `npm run eject`
+```text
+src/
+├── api/     (api abstractions)
+├── context/ (custom react contexts)
+├── hooks/   (custom hooks)
+├── components/
+│   ├── common/   (common components)
+│   └── pages/    (page components)
+│       ├── Home/
+│       ├── Article/
+│       ...
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Detailed project description
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+TODO: more detail
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+OzuWiki is a project that aims to provide the latest information on Özyeğin University to the web, free of charge.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+All of the articles on the site are made up of student contributions, where students can submit new article and edit existing ones. All submissions are reviewed by the site administrators.
 
-## Learn More
+The app uses a main component called `WikiPage` for all pages that ensure uniform design and navigation. This component also exposes the sidebar control, which is used to toggle the sidebar on small screens.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The site has a main landing page, which lists ...
+- Article page contains the article content, and a form for submitting new articles.
+- ...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Responsibilities of the project members
 
-### Code Splitting
+TODO: more detail
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Ege Güngördu**
 
-### Analyzing the Bundle Size
+- Contribution to the design and implementation of the `WikiPage`
+  - Nested components design with functions for designated page areas
+  - `WikiOffcanvas`
+  - `WikiSidebar`
+- Database schema design
+- Implementation of the `Article` page
+  - Handling of markdown syntax
+  - Table of content generation from markdown article
+- Implementation of the `Contribute` page
+  - Custom form validation
+- ...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Kaan Yılmaz**
 
-### Making a Progressive Web App
+- Contribution to the design and implementation of the `WikiPage`
+  - Responsive design for the component elements
+  - `WikiFooter`
+  - `WikiBody`
+- Database api implementation
+  - ...
+- ...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Fatih Alperen Zengin**
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Contribution to the design and implementation of the `WikiPage`
+  - Context design and NavbarItem design
+  - `WikiNavbar`
+  - `WikiNavbarItem`
+  - `WikiHistory`
+- Implementation of the `Home` page
+  - ...
+- ...
