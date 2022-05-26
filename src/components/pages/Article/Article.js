@@ -13,14 +13,6 @@ export default function Article() {
   const params = useParams();
   const navigate = useNavigate();
 
-  //this part adds the page to history when it is opened
-  //TODO add link to page and fix the name
-  /*const history = JSON.parse(window.localStorage.getItem("history"));
-  let index = history.indexOf(params.articleName);
-  if(index > -1)
-  {history.splice(index, 1)};
-  history.unshift(params.articleName)
-  window.localStorage.setItem("history", JSON.stringify(history));*/
   addToHistory(params.articleName);
 
   React.useEffect(() => {

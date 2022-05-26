@@ -19,10 +19,10 @@ export default function HomeSidebar() {
 
           item.replace(/_/g, " ");
 
-          return<a href="" 
+          return<a key={item} href="" 
           onClick={() => {
               navigate('/article/'+item)}}> 
-          <li key={item}>{item}</li></a>})}
+          <li >{item}</li></a>})}
       </ul>
       </div>
     </>

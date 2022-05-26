@@ -35,7 +35,7 @@ const getArticles = async (search = '', page = 1, limit = 5, sort = '', order = 
   try {
     const response = await axios.get('/articles', {
       params: {
-        _q: search,
+        q: search,
         _page: page,
         _limit: limit,
         _sort: sort,
