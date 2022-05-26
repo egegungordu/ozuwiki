@@ -1,7 +1,5 @@
 <p align="center">
-  <p align="center" style="font-family: Georgia; font-size: 40px; color: #6E6E6E;">
-    OzuWiki
-  </o>
+  <h1 align="center">OzuWiki<br></br></h1>
 
   <p align="center">
     OzuWiki brings the latest information on Özyeğin University to the web. Faculties, Courses, Departments, Clubs, Events, and more, through the lens of the Özyeğin University Students.
