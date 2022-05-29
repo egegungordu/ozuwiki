@@ -36,7 +36,123 @@
           "date": "2022-05-23T07:46:36.611Z"
         }
       ]
+    },
+
+    {
+      "id": "CS_240",
+      "name": "CS 240",
+      "imageUrl": "https://picsum.photos/id/1/5616/3744",
+      "imageDescription": "A student taking the CS 240 course (1952 colorized)",
+      "lastUpdated": "2022-01-01T16:28:32.123Z",
+      "details": [
+        {
+          "id": 0,
+          "title": "Field",
+          "description": "Computer Science"
+        },
+        {
+          "id": 1,
+          "title": "Year",
+          "description": "2022"
+        },
+        {
+          "id": 2,
+          "title": "Semester",
+          "description": "Fall"
+        },
+        {
+          "id": 3,
+          "title": "Instructor",
+          "description": "Fatih Uğurdağ"
+        }
+      ],
+      "markdown": "CS 240 Computer Architecture Course\n## Course Content \n### Topics\n Topics include design of a basic CPU on FPGA, instruction pipeline, RISC versus CISC, ALU design, Von Neumann vs Harvard architecture, memory hierarchy, OS support, interrupts, microcontrollers (MCU) versus microprocessors (uP), system buses, peripherals such as hard disk.\n### Course Earnings \n Bir Bilgisayar Sisteminin Bileşenlerinin Neler Olduğunun Ve Nasıl Çalıştıklarının Anlaşılması.\nBasit Bir Cpu'nun Nasıl Çalıştığının Ve Assembly Programlamasının Anlaşılması.\nBasit Bir Cpu'nun Verilog Dili Aracılığıyla Fpga Üzerinde Tasarlanması.\nBilgisayar Başarımının Değişik Boyutlarının, Paralelliğin, Boru Hattı Mimarilerinin Öğrenilmesi ve Ölçümlenmesi.\nCpu Boru Hatlarının Ve Ön Belleklerinin Öğrenilmesi Ve Değişik Metrikler Açısından Ölçümlenmesi. \n### AKTS \n 6.00 \n### Grading Criteria \n Letter Grade \n### Prerequisites \n EE 203  \n### Course Language \n English ",
+      "contributors": [
+        {
+          "name": "Kaan Yılmaz",
+          "email": "kaan.yilmaz.21588@ozu.edu.tr",
+          "date": "2022-05-30T07:46:36.611Z"
+        }
+      ]
+    },
+
+    {
+      "id": "CS_333",
+      "name": "CS 333",
+      "imageUrl": "https://picsum.photos/id/1/5616/3744",
+      "imageDescription": "A student taking the CS 391 course (1952 colorized)",
+      "lastUpdated": "2022-01-01T16:28:32.123Z",
+      "details": [
+        {
+          "id": 0,
+          "title": "Field",
+          "description": "Computer Science"
+        },
+        {
+          "id": 1,
+          "title": "Year",
+          "description": "2022"
+        },
+        {
+          "id": 2,
+          "title": "Semester",
+          "description": "Fall"
+        },
+        {
+          "id": 3,
+          "title": "Instructor",
+          "description": "Emre Sefer"
+        }
+      ],
+      "markdown": "CS 333 Algorithm Analysis Course\n## Course Content \n### Topics\n Topics include Greedy/Dynamic Programming/Divide and Conquer algorithm design paradigms, Graph algorithms (minimum path, spanning tree, max flow), and intractability (NP & NPcomplete problem classes).\n### Course Earnings \n Greedy, Dinamik Programlama, Böl-ve-fethet Yöntemleri Ile Algoritma Dizayn Etme.\nAlgoritma Doğruluğunun Gösterilmesi.\nAlgoritma Verimliliğinin Çıkarılması.\nHesapsal Problemlerin Çözümlerinin Zorluğunun Gösterilmesi. \n### AKTS \n 6.00 \n### Grading Criteria \n Letter Grade \n### Prerequisites \n CS 201  \n### Course Language \n English ",
+      "contributors": [
+        {
+          "name": "Kaan Yılmaz",
+          "email": "kaan.yilmaz.21588@ozu.edu.tr",
+          "date": "2022-05-30T07:46:36.611Z"
+        }
+      ]
+    },
+    {
+      "id": "CS_350",
+      "name": "CS 350",
+      "imageUrl": "https://picsum.photos/id/1/5616/3744",
+      "imageDescription": "A student taking the CS 350 course (1952 colorized)",
+      "lastUpdated": "2022-01-01T16:28:32.123Z",
+      "details": [
+        {
+          "id": 0,
+          "title": "Field",
+          "description": "Computer Science"
+        },
+        {
+          "id": 1,
+          "title": "Year",
+          "description": "2022"
+        },
+        {
+          "id": 2,
+          "title": "Semester",
+          "description": "Fall"
+        },
+        {
+          "id": 3,
+          "title": "Instructor",
+          "description": "İsmail Arı"
+        }
+      ],
+      "markdown": "CS 350 Operating Systems Course \n## Course Content \n### Topics\n This course covers the fundamental concepts of operating systems (OS), as well as the major components of OS', their mechanisms and interactions. Subjects include process management, scheduling, synchronization, locks, memory management, virtualization, input-output, storage and file systems. Students gain practical knowledge by examining the kernel of the open-source Linux OS and by implementing device drivers. Other advanced topics include system security, multicore and distributed computing, OS' for mobile devices, and energy efficiency.\n### Course Earnings \n \nBir Işletim Sisteminin Ana Görevlerini Tanımlama.\nBir Işletim Sisteminin Çekirdeğinde Bulunan Ana Modülleri Isimlendirebilme.\nİşletim Sisteminin Betik Arayüzünde, Sistem Yönetimi Ile Ilgili Komutlar Yazabilme Ve\nÇalıştırabilme.\nİşlemci, Hafıza, Girdi-çıktı Gibi Donanım Kaynaklarının Yönetimi Ile Ilgili Konuları Tartışabilme.\nİşletim Sistemi Kaynak Kodundaki Önemli Veri Yapılarını Belirleme.\nAğ Protokollerini Tanıma Ve Bunları Kullanan Istemci-sunucu Program Yazabilme. \n### AKTS \n 6.00 \n### Grading Criteria \n Letter Grade \n### Prerequisites \n CS 201  \n### Course Language \n English ",
+      "contributors": [
+        {
+          "name": "Kaan Yılmaz",
+          "email": "kaan.yilmaz.21588@ozu.edu.tr",
+          "date": "2022-05-30T07:46:36.611Z"
+        }
+      ]
     }
+
+
+
   ],
   "pendingContributions": [
     {
