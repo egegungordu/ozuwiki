@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { WikiPageContext } from '../../../context/WikiPageContext';
 import React, { useContext } from 'react';
 import { getArticles } from '../../../api/ArticleAPI';
-import { useAsync } from 'react-use';
 
 export default function HomeMain() {
   const [articles, setArticles] = React.useState([]);
@@ -28,7 +27,6 @@ export default function HomeMain() {
             {
             React.useEffect(() => {
               const asyncSet = async () => {
-                let expr;
                 let articlesList = await getArticles();
                 articlesList.map((element) => {
                   const item = element.name;
