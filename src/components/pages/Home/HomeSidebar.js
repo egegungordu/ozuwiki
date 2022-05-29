@@ -22,8 +22,7 @@ export default function HomeSidebar() {
           item.replace(/_/g, " ");
           
           return<a key={item} href="" 
-          onClick={() => {
-            navigate('/article/'+item)}}> 
+          onClick= {()=>{navigate('/article/'+item)}}> 
           <li >{item}</li></a>})}
 
       </ul>

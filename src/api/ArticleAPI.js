@@ -42,6 +42,7 @@ const getArticles = async (search = '', page = 1, limit = 5, sort = '', order = 
         _order: order
       }
     });
+    response.data.splice(0,1);
     return response.data;
   } catch {
     return null;

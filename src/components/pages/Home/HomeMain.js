@@ -6,7 +6,7 @@ import { getArticles } from '../../../api/ArticleAPI';
 import { useAsync } from 'react-use';
 
 export default function HomeMain() {
-  const [articles, setArticles] = React.useState(null);
+  const [articles, setArticles] = React.useState([]);
   const navigate = useNavigate();
   const wikiPageContext = useContext(WikiPageContext);
   
@@ -19,7 +19,7 @@ export default function HomeMain() {
           <p>
             Ozu Wiki aims to inform students about the Ozyegin University. It is made by students, for students.
             You can find any relevant information about our school here. 
-            Can't find what you are looking for? You can add it by clicking <a href="">here!</a>
+            Can't find what you are looking for? You can add it by clicking <a href="" onClick={() => {navigate("article/New_Article/contribute")}}>here!</a>
           </p>
           <h3>
             Here is a list of all the articles we have:
@@ -28,15 +28,18 @@ export default function HomeMain() {
             {
             React.useEffect(() => {
               const asyncSet = async () => {
+                let expr;
                 let articlesList = await getArticles();
                 articlesList.map((element) => {
                   const item = element.name;
-                  //console.log(element.name);
-                  setArticles(<a href="" ><li key={item}>{item}</li></a>)})
-                 
+                  console.log(element.name);
+                  setArticles(articles => [...articles, <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>]);
+                })
+                
               }
               asyncSet()
-            }, [])
+            }
+            , [])
             }
             {articles}
           </ul>

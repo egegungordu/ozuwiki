@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/article/:articleName" element={<Article />} />
         <Route path="/article/:articleName/contribute" element={<Contribute />} />
+        <Route path="/contribute" element={<Contribute />} />
         <Route
           path="/article"
           element={<Navigate to="/" replace />}
