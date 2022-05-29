@@ -14,15 +14,18 @@ export default function HomeSidebar() {
       <div className="sticky-top px-4" style={{top: 48}}>
 
       <h6><b>Recently visited pages:</b></h6>
-      <ul id="history_list">
-        { history.map((item) => {
-
+      
+        <ul id="history_list">
+        {
+        history.map((item) => {
+          
           item.replace(/_/g, " ");
-
+          
           return<a key={item} href="" 
           onClick={() => {
-              navigate('/article/'+item)}}> 
+            navigate('/article/'+item)}}> 
           <li >{item}</li></a>})}
+
       </ul>
       </div>
     </>
