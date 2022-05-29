@@ -15,6 +15,7 @@ export function getHistory(){
 }
 export function addToHistory(name){
     let history;
+    if(name == "New_Article") return;
     try{
         history = JSON.parse(window.localStorage.getItem("history"));
         let index = history.indexOf(name);
