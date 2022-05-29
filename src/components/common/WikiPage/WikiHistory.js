@@ -7,6 +7,10 @@ export function getHistory(){
         history = [];
         window.localStorage.setItem("history","[]");
     }
+    if(!history) {
+        history = [];
+    }
+
     return history;
 }
 export function addToHistory(name){
