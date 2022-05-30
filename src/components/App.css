@@ -167,7 +167,7 @@ a:hover {
 }
 
 .toc-counter {
-  color: var(--gray);
+  color: var(--bs-gray);
 }
 
 .toc-content {
