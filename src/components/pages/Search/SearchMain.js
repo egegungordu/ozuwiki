@@ -12,7 +12,7 @@ export default function SearchMain() {
           <Col className="my-auto text-center">
 
           <h3>
-            Here is a list of all the articles we have:
+            Search Results For: {searchParams.get("q")}
           </h3>
           <ul>
             {

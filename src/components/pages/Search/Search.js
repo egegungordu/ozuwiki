@@ -5,7 +5,12 @@ export default function Search() {
   
   return (
     <WikiPage
-      showAccount={true}>
+      showAccount={true}
+      showHome={true}
+      title="Search"
+      showSearch={true}
+    >
+
         <WikiPage.Main>
           <SearchMain></SearchMain>
         </WikiPage.Main>
