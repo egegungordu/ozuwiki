@@ -12,14 +12,15 @@ export default function SearchMain() {
           <Col className="my-auto text-center">
 
           <h3>
-            Search Results For: {searchParams.get("q")}
+              {articles.length} result(s) found for {searchParams.get("q")}
           </h3>
-          <ul>
+          <ul className ="dotless">
             {
 
             React.useEffect(() => {
               const asyncSet = async () => {
                 let articlesList = await getArticles(searchParams.get("q"));
+                setArticles([]);
                 articlesList.map((element) => {
                   const item = element.name;
                   console.log(element.name);
@@ -29,7 +30,7 @@ export default function SearchMain() {
               }
               asyncSet()
             }
-            , [])
+            , [searchParams.get("q")])
             }
             {articles}
           </ul>

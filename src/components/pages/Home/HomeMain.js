@@ -23,7 +23,7 @@ export default function HomeMain() {
           <h3>
             Here is a list of all the articles we have:
           </h3>
-          <ul>
+          <ul className ="dotless">
             {
             React.useEffect(() => {
               const asyncSet = async () => {

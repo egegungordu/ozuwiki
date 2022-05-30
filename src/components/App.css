@@ -316,3 +316,7 @@ a:hover {
 .modal-footer {
   border-top-color: var(--modal-border-color) !important;
 }
+
+.dotless {
+  list-style-type:none;
+}
