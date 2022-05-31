@@ -10,14 +10,7 @@ export default function SearchMain() {
 
             React.useEffect(() => {
               const asyncSet = async () => {
-                let articlesList = await getArticles(searchParams.get("q"));
-                setArticles([]);
-                articlesList.map((element) => {
-                  const item = element.name;
-                  console.log(element.name);
-                  setArticles(articles => [...articles, <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>]);
-                })
-                
+                setArticles(await getArticles(searchParams.get("q")));
               }
               asyncSet()
             }
@@ -30,7 +23,10 @@ export default function SearchMain() {
               {articles.length} result(s) found for {searchParams.get("q")}
           </h3>
           <ul className ="dotless">
-            {articles}
+            {articles.map((element) =>{
+              const item = element.name
+                   return <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>
+            })}
           </ul>
             
           </Col>
