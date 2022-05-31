@@ -97,7 +97,6 @@ function AccountLogo(props) {
       id="nekonadegoe"
       className="account-dropdown"
     >
-      <Link className="nav-link" to={'/settings'}>Settings</Link>
       <Link className="nav-link" to={'/'}>Log out</Link>
     </NavDropdown>
   )
@@ -110,7 +109,6 @@ function AccountName(props) {
       title={props.accountName}
       className={`account-dropdown px-1 ${props.className}`}
     >
-      <Link className="nav-link" to={'/settings'}>Settings</Link>
       <Link className="nav-link" to={'/'}>Log out</Link>
     </NavDropdown>
   )

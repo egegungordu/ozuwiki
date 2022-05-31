@@ -7,15 +7,6 @@ export default function SearchMain() {
   const [articles, setArticles] = React.useState([]);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  return (
-    <Row className="h-100">
-          <Col className="my-auto text-center">
-
-          <h3>
-              {articles.length} result(s) found for {searchParams.get("q")}
-          </h3>
-          <ul className ="dotless">
-            {
 
             React.useEffect(() => {
               const asyncSet = async () => {
@@ -31,7 +22,14 @@ export default function SearchMain() {
               asyncSet()
             }
             , [searchParams.get("q")])
-            }
+  return (
+    <Row className="h-100">
+          <Col className="my-auto text-center">
+
+          <h3>
+              {articles.length} result(s) found for {searchParams.get("q")}
+          </h3>
+          <ul className ="dotless">
             {articles}
           </ul>
             

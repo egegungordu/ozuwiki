@@ -33,9 +33,9 @@ export default function ContributeForm(props) {
 
   // After 1000 milliseconds, check if the article name exists
   const handleArticleNameChange = async (e) => {
+    console.log('asdjadada')
     const inputName = e.target.value;
-    const underscoredInputName = inputName.replace(/\s/g, '_');
-    if (inputName.length === 0 || underscoredInputName === params.articleName) {
+    if (inputName.length === 0 || inputName === params.articleName) {
       clearTimeout(lastCheckTimeout);
       spinnerRef.current && spinnerRef.current.classList.add('d-none');
       setArticleNameExists(false);

@@ -6,8 +6,7 @@
       "imageUrl": "",
       "imageDescription": "",
       "lastUpdated": "",
-      "details": [
-      ],
+      "details": [],
       "markdown": "You can add new articles by contributing to this page!",
       "contributors": [
         {
@@ -54,7 +53,6 @@
         }
       ]
     },
-
     {
       "id": "CS_240",
       "name": "CS 240",
@@ -92,7 +90,6 @@
         }
       ]
     },
-
     {
       "id": "CS_333",
       "name": "CS 333",
@@ -167,9 +164,6 @@
         }
       ]
     }
-
-
-
   ],
   "pendingContributions": [
     {
@@ -293,6 +287,78 @@
         "details": [],
         "markdown": "You can add new articles by contributing to this page!",
         "comment": "aaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    {
+      "id": "b1769939-6094-4024-b35f-df8fad7eb893",
+      "articleId": "CS_391",
+      "contributorName": "Erik",
+      "contributorEmail": "erik.johnson@ozu.edu.tr",
+      "date": "2022-05-31T13:40:32.401Z",
+      "contribution": {
+        "name": "CS 391",
+        "imageUrl": "https://picsum.photos/id/1/5616/3744",
+        "imageDescription": "A student taking the CS 391 course (1952 colorized)",
+        "details": [
+          {
+            "id": 0,
+            "title": "Field",
+            "description": "Computer Science"
+          },
+          {
+            "id": 1,
+            "title": "Year",
+            "description": "2022"
+          },
+          {
+            "id": 2,
+            "title": "Semester",
+            "description": "Fall"
+          },
+          {
+            "id": 3,
+            "title": "Instructor",
+            "description": "Esma Meral"
+          }
+        ],
+        "markdown": "CS 391 Web Application Development Course\n## Course Content \n### Topics\n This course, aims to make students learn and implement web application development using timely technologies and frameworks with a focus on client side app development technologies. \n### Course Earnings \n Defining fundamental terms and concepts about web application development.\nIdentifying suitable technic and tools for web application development.\nDeveloping a dynamic and reactive web application. \n### AKTS \n 4.00 \n### Grading Criteria \n Letter Grade \n### Prerequisites \n (CS 102 or CS 105) and SEC 201 and SEC 202 \n### Course Language \n English ",
+        "comment": "a"
+      }
+    },
+    {
+      "id": "dd39399b-959c-438d-98cf-1646285bc904",
+      "articleId": "CS_240",
+      "contributorName": "Erik",
+      "contributorEmail": "erik.johnson@ozu.edu.tr",
+      "date": "2022-05-31T13:48:42.576Z",
+      "contribution": {
+        "name": "CS 240",
+        "imageUrl": "https://picsum.photos/id/119/3264/2176",
+        "imageDescription": "Computer Architecture",
+        "details": [
+          {
+            "id": 0,
+            "title": "Field",
+            "description": "Computer Science"
+          },
+          {
+            "id": 1,
+            "title": "Year",
+            "description": "2022"
+          },
+          {
+            "id": 2,
+            "title": "Semester",
+            "description": "Fall"
+          },
+          {
+            "id": 3,
+            "title": "Instructor",
+            "description": "Fatih Uğurdağ"
+          }
+        ],
+        "markdown": "CS 240 Computer Architecture Course\n## Course Content \n### Topics\n Topics include design of a basic CPU on FPGA, instruction pipeline, RISC versus CISC, ALU design, Von Neumann vs Harvard architecture, memory hierarchy, OS support, interrupts, microcontrollers (MCU) versus microprocessors (uP), system buses, peripherals such as hard disk.\n### Course Earnings \nTo understand components of a computer system and how they work.\nTo understand how a simple cpu works and assembly programming.\nDesigning a basic cpu on Fpga through verilog language.\n### AKTS \n 6.00 \n### Grading Criteria \n Letter Grade \n### Prerequisites \n EE 203  \n### Course Language \n English ",
+        "comment": "qwe"
       }
     }
   ]

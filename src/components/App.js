@@ -7,7 +7,6 @@ import Home from './pages/Home/Home';
 import Contribute from './pages/Contribute/Contribute';
 import Search from './pages/Search/Search';
 import Login from './pages/Login/Login';
-import Settings from './pages/Settings/Settings';
 import { WikiPageContextProvider } from '../context/WikiPageContext';
 import NotFound from './pages/NotFound/NotFound';
 
@@ -19,7 +18,6 @@ export default function App() {
         <Route path="/search:query" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/settings" element={<Settings />} />
         <Route path="/article/:articleName" element={<Article />} />
         <Route path="/article/:articleName/contribute" element={<Contribute />} />
         <Route path="/contribute" element={<Contribute />} />
