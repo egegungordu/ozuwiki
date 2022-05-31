@@ -89,7 +89,8 @@ export default function WikiPage(props) {
             // magic
             return (
               <>
-                {showThemeToggle && <WikiNavbarItem.ThemeToggle />}
+                {showThemeToggle && (breakpoint.width < SIZE_SM.width || !panelExists)
+                  && <WikiNavbarItem.ThemeToggle />}
                 {showAccount && (breakpoint.width < SIZE_SM.width ? <WikiNavbarItem.AccountLogo />
                   : !panelExists && <WikiNavbarItem.AccountName accountName={accountName} />)}
               </>

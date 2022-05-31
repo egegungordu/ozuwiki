@@ -28,7 +28,6 @@ export default function WikiNavbar(props) {
       children[props.children.type.displayName] = props.children;
     }
     setChildren(children);
-    // TODO: fix first render bug
     const isSidebarCollapsed = sidebarWidth <= 0
     const isPanelCollapsed = panelWidth <= 0
     const mainItems = []
