@@ -31,19 +31,19 @@ const getArticle = async (name) => {
   }
 }
 
-const getArticles = async ( search = '', page = 1, limit = 5, sort = '', order = '') => {
+const getArticles = async (search = '', page = 1, limit = 5, sort = '', order = '') => {
   try {
     const response = await axios.get('/articles', {
       params: {
-        q: search,
+        'id_like': fillSpacesWithUnderscores(search),
         _page: page,
         _limit: limit,
         _sort: sort,
         _order: order
       }
     });
-    if(search == '')
-    response.data.splice(0,1);
+    if (search == '')
+      response.data.splice(0, 1);
     return response.data;
   } catch {
     return null;
