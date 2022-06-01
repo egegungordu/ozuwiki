@@ -92,7 +92,6 @@ TODO: more detail
   - Table of content generation from markdown article
 - Implementation of the `Contribute` page
   - Custom form validation
-- ...
 
 **Kaan Yılmaz**
 
@@ -101,8 +100,10 @@ TODO: more detail
   - `WikiFooter`
   - `WikiBody`
 - Database api implementation
-  - ...
-- ...
+  - Reading and writing articles
+  - Reading and writing contributions
+- Implementation of search system
+- Design of the search page
 
 **Fatih Alperen Zengin**
 
