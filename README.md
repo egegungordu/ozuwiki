@@ -112,5 +112,6 @@ TODO: more detail
   - `WikiNavbarItem`
   - `WikiHistory`
 - Implementation of the `Home` page
-  - ...
-- ...
+  - Populating the "Recently visited pages" section
+  - Poulating the "All articles list"
+- Idea and implementation the New Article contribution system
