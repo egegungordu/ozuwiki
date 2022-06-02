@@ -30,7 +30,6 @@ export default function HomeMain() {
                 let articlesList = await getArticles();
                 articlesList.map((element) => {
                   const item = element.name;
-                  console.log(element.name);
                   setArticles(articles => [...articles, <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>]);
                 })
                 

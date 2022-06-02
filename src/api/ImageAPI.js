@@ -6,9 +6,9 @@ const uploadImage = async (file) => {
   // cant figure out image upload with imgur...
   return "image link";
 
+  // doesnt work
   try {
     axios.defaults.baseURL = 'https://api.imgur.com/3/';
-    console.log(file)
     const data = new FormData();
     data.append('image', file);
     const response = await axios({
@@ -21,10 +21,8 @@ const uploadImage = async (file) => {
         "Content-Length": file.size,
       }
     });
-    console.log(response)
     return response.data.data.link;
   } catch (error) {
-    console.log(error);
     return null;
   }
 };
