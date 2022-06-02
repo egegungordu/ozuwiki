@@ -1,6 +1,6 @@
 import { WikiPageContext } from '../../../context/WikiPageContext';
 import { useContext } from 'react';
-import { getHistory } from '../../common/WikiPage/WikiHistory';
+import { getHistory } from '../../../api/HistoryAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function HomeSidebar() {

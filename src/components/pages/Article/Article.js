@@ -6,20 +6,19 @@ import WikiPage from '../../common/WikiPage/WikiPage';
 import ArticleMain from './ArticleMain';
 import ArticleSidebar from './ArticleSidebar';
 import ArticlePanel from './ArticlePanel';
-import { addToHistory } from "../../common/WikiPage/WikiHistory";
+import { addToHistory } from "../../../api/HistoryAPI";
 
 export default function Article() {
   const [article, setArticle] = React.useState(null);
   const params = useParams();
   const navigate = useNavigate();
 
-  addToHistory(params.articleName);
-
   React.useEffect(() => {
     const asyncSet = async () => {
       const response = await getArticle(params.articleName, 3);
       if (response) {
-        setArticle(response)
+        setArticle(response);
+        addToHistory(params.articleName);
       } else {
         navigate('/404', { replace: true });
       }

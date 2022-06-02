@@ -36,28 +36,10 @@ export default function HomeMain() {
             Here is a list of all the articles we have:
           </h3>
           <ul className ="dotless">
-<<<<<<< HEAD
             {articles.map((element) =>{
               const item = element.name
                    return <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>
             })}
-=======
-            {
-            React.useEffect(() => {
-              const asyncSet = async () => {
-                let articlesList = await getArticles();
-                articlesList.map((element) => {
-                  const item = element.name;
-                  setArticles(articles => [...articles, <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>]);
-                })
-                
-              }
-              asyncSet()
-            }
-            , [])
-            }
-            {articles}
->>>>>>> f9b525cc454bbfefa83d845a90d88ca93a28eec5
           </ul>
             
           </Col>
