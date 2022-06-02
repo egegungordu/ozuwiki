@@ -1,12 +1,11 @@
-import { Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import React, { useContext } from 'react';
 import { getArticles } from '../../../api/ArticleAPI';
 
 export default function SearchMain() {
   const [articles, setArticles] = React.useState([]);
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   React.useEffect(() => {
     const asyncSet = async () => {

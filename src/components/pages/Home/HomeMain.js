@@ -1,13 +1,10 @@
-import { Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { WikiPageContext } from '../../../context/WikiPageContext';
-import React, { useContext } from 'react';
 import { getArticles } from '../../../api/ArticleAPI';
 
 export default function HomeMain() {
   const [articles, setArticles] = React.useState([]);
   const navigate = useNavigate();
-  const wikiPageContext = useContext(WikiPageContext);
 
   React.useEffect(() => {
     const asyncSet = async () => {

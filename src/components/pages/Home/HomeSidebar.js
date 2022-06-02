@@ -1,13 +1,15 @@
-import { WikiPageContext } from '../../../context/WikiPageContext';
-import { useContext } from 'react';
 import { getHistory } from '../../../api/HistoryAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function HomeSidebar() {
 
   const navigate = useNavigate();
-  const wikiPageContext = useContext(WikiPageContext);
   let history = getHistory();
+
+  const handleGotoArticle = (articleName) => {
+    articleName.replace(/_/g, " ");
+    navigate('/article/'+articleName);
+  }
   return (
     <>
       <h4 className="ozuwikiheader text-center my-5">Ozu Wiki</h4>
@@ -16,14 +18,12 @@ export default function HomeSidebar() {
       <h6><b>Recently visited pages:</b></h6>
       
         <ul id="history_list">
+
         {
-        history.map((item) => {
-          
-          item.replace(/_/g, " ");
-          
-          return<a key={item} href="" 
-          onClick= {()=>{navigate('/article/'+item)}}> 
-          <li >{item}</li></a>})}
+        history.map((articleName) => {
+          return <a key={articleName} href="" onClick={()=>{handleGotoArticle(articleName)}}> 
+                 <li >{articleName}</li></a>
+        })}
 
       </ul>
       </div>
