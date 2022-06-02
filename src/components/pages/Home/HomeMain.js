@@ -8,6 +8,18 @@ export default function HomeMain() {
   const [articles, setArticles] = React.useState([]);
   const navigate = useNavigate();
   const wikiPageContext = useContext(WikiPageContext);
+
+  React.useEffect(() => {
+    const asyncSet = async () => {
+      setArticles(await getArticles());
+    }
+    asyncSet()
+  }
+  , [])
+
+  const handleContributeNew = () => {
+    navigate("article/New_Article/contribute")
+  }
   
   return (
     <Row className="h-100">
@@ -18,28 +30,16 @@ export default function HomeMain() {
           <p>
             Ozu Wiki aims to inform students about the Ozyegin University. It is made by students, for students.
             You can find any relevant information about our school here. 
-            Can't find what you are looking for? You can add it by clicking <a href="" onClick={() => {navigate("article/New_Article/contribute")}}>here!</a>
+            Can't find what you are looking for? You can add it by clicking <a href="" onClick={handleContributeNew}>here!</a>
           </p>
           <h3>
             Here is a list of all the articles we have:
           </h3>
           <ul className ="dotless">
-            {
-            React.useEffect(() => {
-              const asyncSet = async () => {
-                let articlesList = await getArticles();
-                articlesList.map((element) => {
-                  const item = element.name;
-                  console.log(element.name);
-                  setArticles(articles => [...articles, <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>]);
-                })
-                
-              }
-              asyncSet()
-            }
-            , [])
-            }
-            {articles}
+            {articles.map((element) =>{
+              const item = element.name
+                   return <a  key={item} href="" onClick={() => {navigate('/article/'+item)}} ><li>{item}</li></a>
+            })}
           </ul>
             
           </Col>
