@@ -78,6 +78,7 @@ The app uses a main component called `WikiPage` for all pages that ensure unifor
 - The contribution form has a special name verifier that checks the name of the article against the database for uniqueness.
 - A search page is available for searching for articles.
 - WikiPage component has a modular system for different layouts, with the options for disabling the sidebar, panel, and the buttons and navigation available on the navbar.
+- Usage of document.documentElement (html element) was required for dark theme toggle and offcanvas padding toggle, only css classes and attributes were added/removed.
 
 ## Responsibilities of the project members
 
