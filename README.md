@@ -33,19 +33,22 @@ This project was bootstrapped using [create-react-app](https://create-react-app.
 
 ## Dependencies Explained
 
-TODO: more detail
-
 - [axios](https://npmjs.com/package/axios) - HTTP client for making HTTP requests
 - [bootstrap](https://getbootstrap.com/) - CSS framework for making responsive web apps
 - [json-server](https://www.npmjs.com/package/json-server) - Local mock database
-- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Run multiple commands in parallel
+- [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Run multiple commands in parallel for npm scripts
 - [react-bootstrap](https://react-bootstrap.github.io/) - React components for Bootstrap
 - [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - React router for handling routes
 - [react-icons](https://react-icons.netlify.com/) - React icon components
 - [react-use](https://www.npmjs.com/package/react-use) - Many useful hooks for React
-- [uuid](https://www.npmjs.com/package/uuid) - Generate unique IDs
+  > Hooks used in this project:
+  > - useWindowSize:   
+  > - useLocalStorage:  
+  > - useWindowScroll:  
+  > - useMeasure:  
+- [uuid](https://www.npmjs.com/package/uuid) - Generate unique IDs for submitted contributions
 - [react-markdown](https://www.npmjs.com/package/react-markdown) - Markdown renderer component
-- [remark-gfm](https://www.npmjs.com/package/remark-gfm) - Plugin for markdown renderer to parse Custom GFM syntax
+- [remark-gfm](https://www.npmjs.com/package/remark-gfm) - Plugin for markdown renderer to parse Custom GFM syntax, (such as autolinks)
 
 ## File structure
 
@@ -64,21 +67,20 @@ src/
 
 ## Detailed project description
 
-TODO: more detail
-
 OzuWiki is a project that aims to provide the latest information on Özyeğin University to the web, free of charge.
 
 All of the articles on the site are made up of student contributions, where students can submit new article and edit existing ones. All submissions are reviewed by the site administrators.
 
 The app uses a main component called `WikiPage` for all pages that ensure uniform design and navigation. This component also exposes the sidebar control, which is used to toggle the sidebar on small screens.
 
-- The site has a main landing page, which lists ...
+- The site has a main landing page, which lists all available articles, with the history of the last visited articles.
 - Article page contains the article content, and a form for submitting new articles.
-- ...
+- The contribution form has a special name verifier that checks the name of the article against the database for uniqueness.
+- A search page is available for searching for articles.
+- WikiPage component has a modular system for different layouts, with the options for disabling the sidebar, panel, and the buttons and navigation available on the navbar.
+- Usage of document.documentElement (html element) was required for dark theme toggle and offcanvas padding toggle, only css classes and attributes were added/removed.
 
 ## Responsibilities of the project members
-
-TODO: more detail
 
 **Ege Güngördu**
 
@@ -103,7 +105,7 @@ TODO: more detail
   - Reading and writing articles
   - Reading and writing contributions
 - Implementation of search system
-- Design of the search page
+- Design of the `Search` page
 
 **Fatih Alperen Zengin**
 
@@ -114,5 +116,5 @@ TODO: more detail
   - `WikiHistory`
 - Implementation of the `Home` page
   - Populating the "Recently visited pages" section
-  - Poulating the "All articles list"
+  - Populating the "All articles list"
 - Idea and implementation the New Article contribution system

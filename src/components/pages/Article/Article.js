@@ -18,7 +18,6 @@ export default function Article() {
   React.useEffect(() => {
     const asyncSet = async () => {
       const response = await getArticle(params.articleName, 3);
-      console.log(response)
       if (response) {
         setArticle(response)
       } else {
