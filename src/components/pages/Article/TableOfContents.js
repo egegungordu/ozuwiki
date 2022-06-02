@@ -1,4 +1,5 @@
 import { SkeletonTable } from '../../common/Skeletons'
+import {useRef} from 'react'
 
 export default function TableOfContents(props) {
   const contents = calculateTableOfContents(props.markdown)
@@ -17,11 +18,8 @@ export default function TableOfContents(props) {
 function Content(props) {
   const { index, level, title, id } = props.content
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    const top = document.getElementById(id).offsetTop
-    window.scrollTo(0, top)
-    props.onClick && props.onClick(id)
+  const handleClick = () => {
+    props.onClick && props.onClick()
   }
 
   return (
@@ -34,7 +32,7 @@ function Content(props) {
       })}
       <div className={`py-1 d-flex flex-${level > props.compact - 1 ? 'column' : 'row'}`}>
         <span className="toc-counter">{index}</span>
-        <a className="ms-2 toc-content" href={'#' + id} onClick={handleClick}>{title}</a>
+        <a className="ms-2 toc-content" href={`#${id}`} onClick={handleClick}>{title}</a>
       </div>
     </div>
   )
@@ -49,7 +47,7 @@ function calculateTableOfContents(markdown) {
   while (null != (match = regex.exec(markdown))) {
     const level = match[1].length - 1
     const title = match[2]
-    const id = title.replace(/\s/g, '-').toLowerCase()
+    const id = title.trim().replace(/\s/g, '-').toLowerCase()
     counters[level]++
     for (let i = level + 1; i < 6; i++) {
       counters[i] = 0
