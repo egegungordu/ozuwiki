@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">OzuWiki<br></br></h1>
+  <h1 align="center"><br></br>📖<br>OzuWiki<br></br></h1>
 
   <p align="center">
     OzuWiki brings the latest information on Özyeğin University to the web. Faculties, Courses, Departments, Clubs, Events, and more, through the lens of the Özyeğin University Students.
@@ -37,15 +37,16 @@ This project was bootstrapped using [create-react-app](https://create-react-app.
 - [bootstrap](https://getbootstrap.com/) - CSS framework for making responsive web apps
 - [json-server](https://www.npmjs.com/package/json-server) - Local mock database
 - [npm-run-all](https://www.npmjs.com/package/npm-run-all) - Run multiple commands in parallel for npm scripts
+  > `npm start` uses this to run the app and the database in parallel
 - [react-bootstrap](https://react-bootstrap.github.io/) - React components for Bootstrap
 - [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start) - React router for handling routes
 - [react-icons](https://react-icons.netlify.com/) - React icon components
 - [react-use](https://www.npmjs.com/package/react-use) - Many useful hooks for React
-  > Hooks used in this project:
-  > - useWindowSize:   
-  > - useLocalStorage:  
-  > - useWindowScroll:  
-  > - useMeasure:  
+  > react-use hooks used in this project:
+  > - useWindowSize: used for automatically closing the offcanvas and int the custom breakpoint hook 
+  > - useLocalStorage: used for accesing local storage with a hook 
+  > - useWindowScroll: used in the article sidebar for scroll behavior changes with the scroll height 
+  > - useMeasure: used to detect if the sidebar and the panel is open in the navbar
 - [uuid](https://www.npmjs.com/package/uuid) - Generate unique IDs for submitted contributions
 - [react-markdown](https://www.npmjs.com/package/react-markdown) - Markdown renderer component
 - [remark-gfm](https://www.npmjs.com/package/remark-gfm) - Plugin for markdown renderer to parse Custom GFM syntax, (such as autolinks)
@@ -79,6 +80,7 @@ The app uses a main component called `WikiPage` for all pages that ensure unifor
 - A search page is available for searching for articles.
 - WikiPage component has a modular system for different layouts, with the options for disabling the sidebar, panel, and the buttons and navigation available on the navbar.
 - Usage of document.documentElement (html element) was required for dark theme toggle and offcanvas padding toggle, only css classes and attributes were added/removed.
+- Login system is not implemented, but some of the UI elements are still visible.
 
 ## Responsibilities of the project members
 

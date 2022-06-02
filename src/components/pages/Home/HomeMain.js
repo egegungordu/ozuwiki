@@ -1,6 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { getArticles } from '../../../api/ArticleAPI';
+import React from 'react';
 
 export default function HomeMain() {
   const [articles, setArticles] = React.useState([]);
